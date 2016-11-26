@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css伪类选择器</title>
+  <style media="screen">
+  a{
+    text-decoration:none;
+  }
+  /*初始样式*/
+    a:link{
+      color:#ea77aa;
+      font-size:20px;
+    }
+    /*已经被访问过之后的样式*/
+    a:visited{
+      color:purple;
+      font-size:20px;
+    }
+    /*鼠标悬停样式*/
+    a:hover{
+      color:red;
+      font-size:50px;
+    }
+    /*活动进行时的样式*/
+    a:active{
+      color:yellow;
+      font-size:20px
+    }
+    /*如果要写多个顺序不能变，必须是这个*/
+  </style>
+</head>
+<body>
+<a href="https://www.baidu.com">百度</a>
+</body>
+</html>

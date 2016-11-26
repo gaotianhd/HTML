@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>宇宙</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body,html{
+      width: 100%;
+      height: 100%;
+      background: url("./day14/image/bg.jpg");
+      /*transform-style: preserve-3d;*/
+      /*perspective: 400px;*/
+    }
+    @keyframes run{
+      0%{
+        transform: rotate(0);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+    .f{
+      width: 560px;
+      height: 560px;
+      border-radius: 280px;
+      /*border: 1px solid white;*/
+      margin: 50px auto;
+      position: relative;
+      animation: run 19s linear infinite;
+      transform-style: preserve-3d;
+      perspective: 400px;
+    }
+    .f:hover{
+      animation-play-state: paused;
+    }
+    .f:hover div{
+      animation-play-state: paused;
+    }
+    .f1{
+      width: 510px;
+      height: 510px;
+      border-radius: 255px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -255px;
+      margin-top: -255px;
+      /*animation: run1 20s linear infinite;*/
+    }
+    .f1-1{
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: yellow;
+      position: absolute;
+      top: -4px;
+      left: 270px;
+      transform-style: preserve-3d;
+      box-shadow: 0 0 10px white;
+      animation: run1 20s linear infinite;
+    }
+    .f1-1::before{
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      border: 3px solid white;
+      border-radius: 20px;
+      transform: rotate3d(15,5,0,65deg);
+      /*transform: skewX(45deg);*/
+    }
+    .f2{
+      width: 460px;
+      height: 460px;
+      border-radius: 230px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -230px;
+      margin-top: -230px;
+      animation: run 15s linear infinite;
+    }
+    .f2-1{
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: blue;
+      position: absolute;
+      top: 148px;
+      left: 7px;
+      box-shadow: 0 0 10px white;
+    }
+    .f3{
+      width: 410px;
+      height: 410px;
+      border-radius: 205px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -205px;
+      margin-top: -205px;
+    }
+    .f3-1{
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: pink;
+      position: absolute;
+      top: 200px;
+      left: -5px;
+      box-shadow: 0 0 10px white;
+    }
+    .f4{
+      width: 360px;
+      height: 360px;
+      border-radius: 180px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -180px;
+      margin-top: -180px;
+    }
+    .f4-1{
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: green;
+      position: absolute;
+      top: 300px;
+      left: 45px;
+      box-shadow: 0 0 10px white;
+    }
+    .f5{
+      width: 310px;
+      height: 310px;
+      border-radius: 155px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -155px;
+      margin-top: -155px;
+      animation: run 10s linear infinite;
+    }
+    .f5-1{
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: white;
+      position: absolute;
+      top: 297px;
+      left: 200px;
+      box-shadow: 0 0 10px white;
+    }
+    .f6{
+      width: 260px;
+      height: 260px;
+      border-radius: 130px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -130px;
+      margin-top: -130px;
+      animation: run1 10s linear infinite;
+      background: url("./day14/image/stone.png");
+      background-size: 100% 100%;
+    }
+    .f6-1{
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background: red;
+      position: absolute;
+      top: 18px;
+      left: 200px;
+      animation: run1 5s linear infinite;
+      box-shadow: 0 0 10px white;
+    }
+    .f6-1::before{
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 2.5px;
+      background: lightblue;
+      position: absolute;
+      top: -5px;
+      left: -5px;
+    }
+    @keyframes run1 {
+      0%{
+      transform: rotateZ(0);
+      }
+      100%{
+        transform: rotateZ(-360deg);
+      }
+    }
+    .f7{
+      width: 210px;
+      height: 210px;
+      border-radius: 105px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -105px;
+      margin-top: -105px;
+      animation: run 7s linear infinite;
+    }
+    .f7-1{
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: green;
+      position: absolute;
+      top: 43px;
+      left: 190px;
+      box-shadow: 0 0 10px white;
+    }
+    .f8{
+      width: 160px;
+      height: 160px;
+      border-radius: 80px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -80px;
+      margin-top: -80px;
+    }
+    .f8-1{
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: blue;
+      position: absolute;
+      top: 140px;
+      left: 120px;
+      box-shadow: 0 0 10px white;
+    }
+    .f9{
+      width: 110px;
+      height: 110px;
+      border-radius: 55px;
+      border: 1px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -55px;
+      margin-top: -55px;
+    }
+    .f9-1{
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: yellow;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      box-shadow: 0 0 10px white;
+    }
+    .f10{
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      background: yellow;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -30px;
+      margin-top: -30px;
+      box-shadow: 0 0 10px yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="f">
+    <div class="f1"><div class="f1-1"></div></div>
+    <div class="f2"><div class="f2-1"></div></div>
+    <div class="f3"><div class="f3-1"></div></div>
+    <div class="f4"><div class="f4-1"></div></div>
+    <div class="f5"><div class="f5-1"></div></div>
+    <div class="f6"><div class="f6-1"></div></div>
+    <div class="f7"><div class="f7-1"></div></div>
+    <div class="f8"><div class="f8-1"></div></div>
+    <div class="f9"><div class="f9-1"></div></div>
+    <div class="f10"></div>
+  </div>
+</body>
+</html>

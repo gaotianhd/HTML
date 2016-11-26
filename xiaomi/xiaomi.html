@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="scroll.js"></script>
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  a{
+    text-decoration: none;
+  }
+  ul{
+    list-style: none;
+  }
+  @font-face {
+    font-family: "myfont"; /*自己指定的字体名称*/
+    src: url("./iconfont/iconfont.eot");
+    src: url('./iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('./iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('./iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+  }
+  .iconfont {
+    font-family: "myfont";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+  }
+  .top a{
+    display: inline-block;
+    color: #b0b0b0;
+    font-size: 13px;
+  }
+    .top{
+      width: 100%;
+      height: 40px;
+      background-color: #333;
+      color: #b0b0b0;
+    }
+    .top-nav{
+      width: 1226px;
+      height: 40px;
+      margin: 0 auto;
+    }
+    .top-list{
+      float: left;
+    }
+    .top-list a{
+      height: 40px;
+      line-height: 40px;
+      margin: 0 5px;
+    }
+    .top-list a:hover{
+      color: white;
+    }
+    .top-gw{
+      float: right;
+      width: 120px;
+      height: 40px;
+      margin-left: 10px;
+    }
+    .top-gw a{
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #424242;
+      text-align: center;
+    }
+    @keyframes run {
+      0%{}
+      100%{top:40px;}
+    }
+    @keyframes run1 {
+      0%{top: 40px}
+      100%{top: 0;}
+    }
+    .top-gw a:hover{
+      background-color: white;
+      color: #f36c21;
+    }
+    .top-gw a:hover .gw1{
+      display: block;
+      animation-name: run;
+      animation-duration: 0.1s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+    .top .top-gw span div{
+      border: 1px solid #ddd;
+      background-color: white;
+      color: black;
+      display: none;
+      float: left;
+      width: 250px;
+      height: 60px;
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -125px;
+      box-shadow:  0 0 8px #ddd;
+      transition: all 1s linear;
+    }
+    /*.top .top-gw span .gw{
+      display: block;
+      animation-name: run;
+      animation-duration: 0.1s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }*/
+    /*.top-gw .ahover{
+      background-color: white;
+      color: #f36c21;
+    }*/
+    .top-gw a span{
+      display: inline-block;
+      position: 5px 0;
+    }
+    .top-user{
+      float: right;
+    }
+    .top-user a{
+      height: 40px;
+      line-height: 40px;
+      margin: 0 10px;
+    }
+    .top-user a:hover{
+      color: white;
+    }
+    .serch{
+      width: 1226px;
+      height: 100px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .serch .serch-logo{
+      width: 56px;
+      height: 56px;
+      float: left;
+      position: absolute;
+      top: 22px;
+    }
+    .serch .serch-logo a{
+      display: inline-block;
+      width: 56px;
+      height: 57px;
+      background: url("./xiaomi/mi-image/min.png");
+      position: absolute;
+      transition: all 3s ease-in;
+      top: 0;
+      left: 0;
+    }
+    .serch .serch-logo a:hover{
+      top: 0;
+      left: 100px;
+    }
+    .serch .serch-list{
+      width: 650px;
+      height: 100px;
+      float: left;
+      margin-left: 230px;
+    }
+    .serch .serch-list li{
+      float: left;
+      height: 100px;
+      line-height: 100px;
+      padding: 0 10px;
+    }
+    .serch .serch-list li a{
+      color: black;
+    }
+    .serch .serch-list li a:hover{
+      color: #f36c21;
+    }
+    .serch .serch-1{
+      float: right;
+      width: 300px;
+      height: 100px;
+      line-height: 100px;
+      position: relative;
+    }
+    .serch .serch-1 a{
+      display: inline-block;
+      position: absolute;
+      background: #eee;
+      height: 20px;
+      line-height: 20px;
+      color: #757575;
+      top: 40px;
+      right: 60px;
+    }
+    .serch .serch-1 a:hover{
+      color: #f36c21;
+    }
+    .serch .serch-1 .t1{
+      width: 240px;
+      height: 47px;
+      border: 1px solid #eee;
+      position: absolute;
+      top: 25px;
+      left: 8px;
+      padding-left: 5px;
+    }
+    .serch .serch-1 .b1{
+      display: inline-block;
+      width: 51px;
+      height: 50px;
+      border: 1px solid #eee;
+      background: url("./xiaomi/mi-image/button1.png");
+      position: absolute;
+      top: 25px;
+      right: 0;
+      cursor: pointer;
+    }
+    .serch .serch-1 .b1:hover{
+      background-image: url("./xiaomi/mi-image/button2.png");
+    }
+    .serch .serch-1 .t1:focus{
+      outline: 1px solid red;
+      z-index: 2;
+    }
+    .serch .serch-1 .b1:focus{
+      outline: none;
+    }
+    .box{
+      width: 1226px;
+      height: 460px;
+      background: url("./xiaomi/mi-image/1.jpg");
+      margin: 10px auto;
+      position: relative;
+    }
+    .box .box-list{
+      float: left;
+    }
+    .box .box-list ul{
+      width: 230px;
+      height: 460px;
+      background-color: #66635e;
+      opacity: 0.7;
+    }
+    .box .box-list .a1{
+     margin-top: 10px;
+     }
+     /*.box .box-list .a1::before{
+       text-align: center;
+       content: "孙唯傻逼";
+       width: 200px;
+       height: 200px;
+       line-height: 200px;
+       color: red;
+       background-color: gray;
+       position: absolute;
+       visibility: hidden;
+       top: -100px;
+       left: 0;
+       border-radius: 100px;
+       transition: all 1s ease-in;
+     }*/
+     .box .box-list .a1:hover::before{
+       top: -65px;
+       left: 230px;
+       visibility: visible;
+     }
+    .box .box-list li{
+      position: relative;
+      padding: 1px 0;
+    }
+    .box .box-list ul li a{
+      display: inline-block;
+      width: 200px;
+      height: 42px;
+      line-height: 42px;
+      padding-left: 30px;
+      color: white;
+    }
+    .box .box-list ul li a:hover{
+      background-color: #ff6700;
+    }
+    .box .box-list ul li span{
+      position: absolute;
+      right: 5px;
+      color: white;
+    }
+    .left a,.right a{
+      width: 41px;
+      height: 69px;
+      position: absolute;
+      top: 50%;
+      margin-top: -34px;
+      cursor: pointer;
+    }
+    .left a{
+      background: url("./xiaomi/mi-image/arr_r1_c5.png");
+      left: 230px;
+    }
+    .left a:hover{
+      background: url("./xiaomi/mi-image/arrow_r1_c1.png");
+    }
+    .right a{
+      background: url("./xiaomi/mi-image/arr_r1_c7.png");
+      right: 10px;
+    }
+    .right a:hover{
+      background: url("./xiaomi/mi-image/arrow_r1_c3.png");
+    }
+    .sum{
+      width: 120px;
+      height: 20px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      margin-left: -60px;
+    }
+    .sum li{
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 10px;
+      float: left;
+      background-color: #666;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    .sum li a{
+      color: white;
+    }
+    .sum li a:hover{
+      color: red;
+    }
+    .box-d{
+      width: 1226px;
+      height: 170px;
+      margin-top: 20px;
+      margin: 0 auto;
+    }
+    .box-d-left{
+      width: 230px;
+      height: 170px;
+      float: left;
+      background-color: #66635e;
+    }
+    .box-d .box-d-left a{
+      font-size: 15px;
+      display: inline-block;
+      width: 70px;
+      padding-left: 4px;
+      height: 82px;
+      line-height: 82px;
+      color: #b0b0b0;
+    }
+    .box-d .box-d-left a:hover{
+      color: white;
+    }
+    .a-h{
+      border-bottom: 0.5px solid #b0b0b0;
+    }
+    .box-d-1 a{
+      display: inline-block;
+      width: 316px;
+      height: 170px;
+      float: left;
+      margin-left: 16px;
+      background: url("./xiaomi/mi-image/2.jpg");
+      background-size: 100% 100%;
+    }
+    .box-d-2 a{
+      display: inline-block;
+      width: 316px;
+      height: 170px;
+      float: left;
+      margin-left: 16px;
+      background: url("./xiaomi/mi-image/3.jpg");
+      background-size: 100% 100%;
+    }
+    .box-d-3 a{
+      display: inline-block;
+      width: 316px;
+      height: 170px;
+      float: left;
+      margin-left: 16px;
+      background: url("./xiaomi/mi-image/4.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi{
+      width: 1226px;
+      height: 438px;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+    .xiaomi .xiaomi-top{
+      width: 1226px;
+      height: 58px;
+      line-height: 58px;
+    }
+    .xiaomi .xiaomi-list{
+      width: 1226px;
+      height: 340px;
+      margin: 0 auto;
+    }
+    .xiaomi .xiaomi-list li{
+      float: left;
+      width: 230px;
+      height: 300px;
+      padding-top: 40px;
+      margin-right: 15px;
+      background-color: #fafafa;
+      text-align: center;
+      position: relative;
+    }
+    .xiaomi .xiaomi-list li:hover a{
+      box-shadow: 1px 1px 5px gray,-1px -1px 5px gray;
+      top: -5px;
+    }
+    .xiaomi .xiaomi-list li:hover{
+      box-shadow: 1px 1px 5px gray,-1px -1px 5px gray;
+      top: -5px;
+    }
+    .xiaomi .xiaomi-list li a{
+      color: black;
+    }
+    .xiaomi .xiaomi-list li .a-1{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/5.jpg");
+    }
+    .xiaomi .xiaomi-list li .a-2{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/6.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi .xiaomi-list li .a-3{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/7.png");
+      background-size: 100% 100%;
+    }
+    .xiaomi .xiaomi-list li .a-4{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/8.png");
+      background-size: 100% 100%;
+    }
+    .xiaomi .xiaomi-list li .a-5{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/9.jpg");
+    }
+    .name{
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .desc{
+      color: #b8b8b8;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .price{
+      color: #ff693a;
+    }
+    .xiaomi-1{
+      width: 100%;
+      height: 700px;
+      padding-top: 50px;
+      background-color: #f5f5f5;
+    }
+    .xiaomi-1 .zn{
+      width: 1226px;
+      height: 686px;
+      margin: 0 auto;
+    }
+    .xiaomi-1 .zn .zn-top{
+      width: 1226px;
+      height: 58px;
+      line-height: 58px;
+    }
+    .xiaomi-1 .zn .zn-top a{
+      display: inline-block;
+      height: 58px;
+      line-height: 58px;
+      color: #333;
+      float: right;
+    }
+    .xiaomi-1 .zn .zn-top a:hover{
+      color: #ff693a;
+    }
+    .xiaomi-1 .zn .zn-list{
+      width: 1226px;
+      height: 628px;
+      margin: 0 auto;
+    }
+    .xiaomi-1 .zn .zn-list .a-s{
+      display: inline-block;
+      float: left;
+      width: 230px;
+      height: 614px;
+      background: url("./xiaomi/mi-image/23.jpg");
+      background-size: 100% 100%;
+      margin-right: 14px;
+      position: relative;
+    }
+    .xiaomi-1 .zn .zn-list .a-s:hover{
+      box-shadow: 1px 1px 5px gray,-1px -1px 5px gray;
+      top: -5px;
+    }
+    .xiaomi-1 .zn .zn-list .zn-list-1{
+      float: left;
+      width: 980px;
+      height: 614px;
+    }
+    .xiaomi-1 .zn .zn-list li{
+      float: left;
+      position: relative;
+      width: 230px;
+      height: 270px;
+      padding-top: 30px;
+      margin-right: 15px;
+      background-color: #fff;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .xiaomi-1 .zn .zn-list li a{
+      color: black;
+    }
+    .xiaomi-1 .zn .zn-list .zn-list-1 span{
+      color: #b8b8b8;
+      text-decoration: line-through;
+    }
+    .xiaomi-1 .zn .zn-list .zn-list-1 li:hover{
+      box-shadow: 1px 1px 5px gray,-1px -1px 5px gray;
+      top: -5px;
+    }
+    .xiaomi-1 .zn .zn-list li .a-1{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/10.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi-1 .zn .zn-list li .a-2{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/11.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi-1 .zn .zn-list li .a-3{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/12.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi-1 .zn .zn-list li .a-4{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/13.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi-1 .zn .zn-list li .a-5{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/14.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi-1 .zn .zn-list li .a-6{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/15.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi-1 .zn .zn-list li .a-7{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/16.jpg");
+      background-size: 100% 100%;
+    }
+    .xiaomi-1 .zn .zn-list li .a-8{
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      background: url("./xiaomi/mi-image/17.jpg");
+      background-size: 100% 100%;
+    }
+    .down{
+      width: 1226px;
+      height: 272px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .down-top{
+      width: 1218px;
+      height: 80px;
+      border-bottom: 1px solid #eee;
+    }
+    .down .down-top li{
+      float: left;
+      margin: 30px 0;
+      height: 20px;
+      line-height: 20px;
+      border-right: 1px solid #eee;
+    }
+    .down .down-top li a{
+      display: inline-block;
+      margin-left: 70px;
+      margin-right: 70px;
+      color: black;
+
+    }
+    .down .down-top li a:hover{
+      color: #ff693a;
+    }
+    .down .down-left dl{
+      float: left;
+      margin-right: 100px;
+    }
+    .down .down-left dl dt{
+      margin-top: 50px;
+      margin-bottom: 25px;
+    }
+    .down .down-left dl dd{
+      margin-bottom: 10px;
+    }
+    .down .down-left dl dd a{
+      font-size: 12px;
+      color: #939393;
+    }
+    .down .down-left dl dd a:hover{
+      color: #ff693a;
+    }
+    .down .down-right {
+      float: right;
+      width: 230px;
+      height: 180px;
+      text-align: center;
+      position: absolute;
+      top: 130px;
+      right: 20px;
+    }
+    .down .down-right .p1{
+      color: #ff693a;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .down .down-right .p2{
+      color: #939393;
+      font-size: 12px;
+    }
+    .down .down-right .b1{
+      display: inline-block;
+      width: 120px;
+      height: 30px;
+      margin-top: 15px;
+      border: 1px solid #ff693a;
+      color: #ff693a;
+      background-color: white;
+      cursor: pointer;
+    }
+    .down .down-right .b1:hover{
+      background-color: #ff693a;
+      color: white;
+    }
+    .down .down-right .b1:focus{
+      outline: none;
+    }
+    .fin{
+      width: 100%;
+      height: 200px;
+      background-color: #fafafa;
+    }
+    .fin .fin-nav{
+      width: 1226px;
+      padding-top: 50px;
+      height: 150px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .fin-logo{
+      float: left;
+      width: 56px;
+      height: 57px;
+      background: url("./xiaomi/mi-image/min.png");
+    }
+    .fin .fin-nav .l1{
+      border-right: 1px solid #939393;
+    }
+    .fin .fin-nav li{
+      float: left;
+      height: 10px;
+      line-height: 10px;
+      padding: 0 5px;
+      font-size: 12px;
+    }
+    .fin .fin-nav li a{
+        color: #939393;
+    }
+    .fin .fin-nav li a:hover{
+      color: #ff693a;
+    }
+    .fin .fin-nav p {
+      color: #939393;
+      font-size: 12px;
+      float: left;
+      margin-right: 300px;
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+    .fin .fin-nav p a{
+      color: #939393;
+    }
+    .fin .fin-nav p a:hover{
+      color: #ff693a;
+    }
+    .fin .fin-nav .fin-logo-1{
+      float: right;
+      width: 85px;
+      height: 28px;
+      background: url("./xiaomi/mi-image/v-logo-3.png");
+    }
+    .fin .fin-nav .fin-logo-2{
+      float: right;
+      width: 85px;
+      height: 28px;
+      background: url("./xiaomi/mi-image/v-logo-2.png");
+    }
+    .fin .fin-nav .fin-logo-3{
+      float: right;
+      width: 85px;
+      height: 28px;
+      background: url("./xiaomi/mi-image/v-logo-1.png");
+    }
+    .fin .fin-nav .fin-logo-4{
+      float: right;
+      width: 85px;
+      height: 28px;
+      background: url("./xiaomi/mi-image/seal.png");
+      background-size: 100% 100%;
+    }
+    .fin .mi p{
+      font-size: 20px;
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      color: #939393;
+    }
+    .s1{
+      display: inline-block;
+      position: relative;
+    }
+
+  </style>
+</head>
+<body>
+<div class="top">
+  <div class="top-nav">
+    <div class="top-list"><a href="#">小米商城</a>|
+    <a href="#">MIUI</a>|
+    <a href="#">米聊</a>|
+    <a href="#">游戏</a>|
+    <a href="#">多看阅读</a>|
+    <a href="#">云服务</a>|
+    <a href="#">金融</a>|
+    <a href="#">小米网移动版</a>|
+    <a href="#">问题反馈</a>|
+    <a href="#">Select Region</a></div>
+    <div class="top-gw"><a id="gw-a" href="#"><span class="iconfont">&#xe611;</span><span class="s1">购物车（0）<div id="gw1" class="gw1">购物车中没有商品赶快选购把！</div></span></a></div>
+    <div class="top-user"><a href="#">登陆</a>|<a href="#">注册</a></div>
+ </div>
+</div>
+<div class="serch">
+  <div class="serch-logo"><a href="#"></a></div>
+  <div class="serch-list"><ul>
+    <li><a href="#">小米手机</a></li>
+    <li><a href="#">红米</a></li>
+    <li><a href="#">平板·笔记本</a></li>
+    <li><a href="#">电视</a></li>
+    <li><a href="#">盒子·影音</a></li>
+    <li><a href="#">路由器</a></li>
+    <li><a href="#">智能硬件</a></li>
+    <li><a href="#">服务</a></li>
+    <li><a href="#">社区</a></li>
+  </ul></div>
+  <div class="serch-1"><input type="text" class="t1"><input type="button" class="b1"><a href="#">小米5</a></div>
+</div>
+<div id="box1" class="box">
+  <div class="box-list"><ul>
+    <li><a href="#" class="a1">手机 电话卡<span>></span></a></li>
+    <li><a href="#">笔记本 平板<span>></span></a></li>
+    <li><a href="#">电视 盒子<span>></span></a></li>
+    <li><a href="#">路由器 智能硬件<span>></span></a></li>
+    <li><a href="#">移动电源 电池 插线板<span>></span></a></li>
+    <li><a href="#">耳机 音箱<span>></span></a></li>
+    <li><a href="#">保护套 贴膜<span>></span></a></li>
+    <li><a href="#">线材 支架 存储卡<span>></span></a></li>
+    <li><a href="#">箱包 服饰<span>></span></a></li>
+    <li><a href="#">米兔 生活周边<span>></span></a></li>
+  </ul></div>
+  <div class="left"><a href="#"></a></div>
+  <div class="right"><a href="#"></a></div>
+  <div class="sum">
+    <ul>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+    </ul>
+  </div>
+</div>
+<div class="box-d">
+  <div class="box-d-left">
+    <a href="#" class="a-h">选购手机</a>
+    <a href="#" class="a-h">企业团购</a>
+    <a href="#" class="a-h">官翻产品</a>
+    <a href="#">小米移动</a>
+    <a href="#">以旧换新</a>
+    <a href="#">话费充值</a>
+  </div>
+  <div class="box-d-1"><a href="#"></a></div>
+  <div class="box-d-2"><a href="#"></a></div>
+  <div class="box-d-3"><a href="#"></a></div>
+</div>
+<div class="xiaomi">
+  <div class="xiaomi-top"><h2>小米明星单品</h2></div>
+  <div class="xiaomi-list">
+   <ul>
+    <li><a href="#" class="a-1"></a><br><a href="#" class="name">小米电视3s 43英寸</a><p class="desc">全金属旗舰，液晶屏幕</p><p class="price">1799元</p></li>
+    <li><a href="#" class="a-2"></a><br><a href="#" class="name">小米手环2</a><p class="desc">每天早10点开售</p><p class="price">149元</p></li>
+    <li><a href="#" class="a-3"></a><br><a href="#" class="name">红米Note3</a><p class="desc">4000mAh轻薄大电池 金属机身</p><p class="price">899元起</p></li>
+    <li><a href="#" class="a-4"></a><br><a href="#" class="name">小米Max高配版</a><p class="desc">6.44英寸大屏，3GB内存+64GB容量</p><p class="price">1699元</p></li>
+    <li><a href="#" class="a-5"></a><br><a href="#" class="name">小米空气净化器2</a><p class="desc">10分钟，房间空气焕然一新</p><p class="price">699元</p></li>
+  </ul>
+ </div>
+</div>
+<div class="xiaomi-1">
+  <div class="zn">
+    <div class="zn-top"><a href="#">查看全部 ></a><h2>智能硬件</h2></div>
+    <div class="zn-list">
+      <a href="#" class="a-s"></a>
+      <div class="zn-list-1">
+       <ul>
+        <li><a href="#" class="a-1"></a><a href="#" class="name">小米路由器</a><p class="desc">四天线设计，更安全更稳定</p><p class="price">149元</p></li>
+        <li><a href="#" class="a-2"></a><a href="#" class="name">电助力折叠自行车</a><p class="desc">力矩传感电助力，让城市出行轻松有趣</p><p class="price">2990元</p></li>
+        <li><a href="#" class="a-3"></a><a href="#" class="name">小米体重秤</a><p class="desc">喝杯水都可感知的精准</p><p class="price">99元</p></li>
+        <li><a href="#" class="a-4"></a><a href="#" class="name">小米净水器 厨下试</a><p class="desc">RO反渗透直出纯净水，包邮包安装</p><p class="price">1999元</p></li>
+        <li><a href="#" class="a-5"></a><a href="#" class="name">米兔儿童电话手表</a><p class="desc">安全防走丢，宝贝的贴身护卫</p><p class="price">199元</p></li>
+        <li><a href="#" class="a-6"></a><a href="#" class="name">米家压力IH电饭煲</a><p class="desc">智能烹饪，3L容量</p><p class="price">999元</p></li>
+        <li><a href="#" class="a-7"></a><a href="#" class="name">全系智能套装限时版</a><p class="desc">开启你的智能生活</p><p class="price">292元<span class="s1">325元</span></p></li>
+        <li><a href="#" class="a-8"></a><a href="#" class="name">小米手环 光感版</a><p class="desc">实时监测心率，科学运动</p><p class="price">99元</p></li>
+       </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="down">
+  <div class="down-top">
+    <ul>
+      <li><a href="#">1小时快修服务</a></li>
+      <li><a href="#">7天无理由退货</a></li>
+      <li><a href="#">15天免费换货</a></li>
+      <li><a href="#">满150元包邮</a></li>
+      <li><a href="#">520余家售后网点</a></li>
+    </ul>
+  </div>
+  <div class="down-left">
+    <dl>
+      <dt>帮助中心</dt>
+      <dd><a href="#">账户管理</a></dd>
+      <dd><a href="#">购物指南</a></dd>
+      <dd><a href="#">订单操作</a></dd>
+    </dl>
+    <dl>
+      <dt>帮助中心</dt>
+      <dd><a href="#">账户管理</a></dd>
+      <dd><a href="#">购物指南</a></dd>
+      <dd><a href="#">订单操作</a></dd>
+    </dl>
+    <dl>
+      <dt>帮助中心</dt>
+      <dd><a href="#">账户管理</a></dd>
+      <dd><a href="#">购物指南</a></dd>
+      <dd><a href="#">订单操作</a></dd>
+    </dl>
+    <dl>
+      <dt>帮助中心</dt>
+      <dd><a href="#">账户管理</a></dd>
+      <dd><a href="#">购物指南</a></dd>
+      <dd><a href="#">订单操作</a></dd>
+    </dl>
+    <dl>
+      <dt>帮助中心</dt>
+      <dd><a href="#">账户管理</a></dd>
+      <dd><a href="#">购物指南</a></dd>
+      <dd><a href="#">订单操作</a></dd>
+    </dl>
+    <dl>
+      <dt>帮助中心</dt>
+      <dd><a href="#">账户管理</a></dd>
+      <dd><a href="#">购物指南</a></dd>
+      <dd><a href="#">订单操作</a></dd>
+    </dl>
+  </div>
+  <div class="down-right">
+    <p class="p1">400-100-5678</p>
+    <p class="p2">周一至周日8:00-18:00</p>
+    <p class="p2">（仅收市话费）</p>
+    <input class="b1" type="button" name="name" value="24小时在线客服">
+  </div>
+</div>
+<div class="fin">
+  <div class="fin-nav">
+    <div class="fin-logo">
+    </div>
+    <ul>
+      <li class="l1"><a href="#">小米商城</a></li>
+      <li class="l1"><a href="#">MIUI</a></li>
+      <li class="l1"><a href="#">米聊</a></li>
+      <li class="l1"><a href="#">多看书城</a></li>
+      <li class="l1"><a href="#">小米路由器</a></li>
+      <li class="l1"><a href="#">视频电话</a></li>
+      <li class="l1"><a href="#">小米后院</a></li>
+      <li class="l1"><a href="#">小米天猫店</a></li>
+      <li class="l1"><a href="#">小米淘宝直营店</a></li>
+      <li class="l1"><a href="#">小米网盟</a></li>
+      <li class="l1"><a href="#">问题反馈</a></li>
+      <li><a href="#">Select Region</a></li>
+    </ul>
+    <a href="#" class="fin-logo-1"></a>
+    <a href="#" class="fin-logo-2"></a>
+    <a href="#" class="fin-logo-3"></a>
+    <a href="#" class="fin-logo-4"></a>
+    <p><a href="#">@mi.com</a> 京ICP证110507号 京ICP备10046444号 <a href="#">京公网备11010802020134</a> <a href="#">京网文[2014]0059-0009号</a></p>
+    <p>违法和不良信息举报电话：185-0123-1234，除特殊说明，所有数据均出自我公司实验室测试</p>
+    <div class="mi"><p>搜索黑科技，小米为发烧而生！</p></div>
+  </div>
+</div>
+<script type="text/javascript">
+    var array = new Array();
+    array[0]="url(./xiaomi/mi-image/1.jpg)";
+    array[1]="url(./xiaomi/mi-image/banner.jpg)";
+    array[2]="url(./xiaomi/mi-image/xiaomi.jpg)";
+    array[3]="url(./xiaomi/mi-image/xiaomi1.jpg)";
+    var i = 0;
+    function picture(){
+      var f = document.getElementById("box1");
+      f.style.backgroundImage = array[i];
+      i++;
+      if(i==4){
+        i = 0;
+      }
+
+    }
+    setInterval("picture()",3000);
+
+    var gw_a = document.getElementById('gw-a');
+    var gw = document.getElementById('gw1');
+
+
+    // gw_a.onmouseover = function(){
+    //   gw_a.className = "ahover";
+    //   gw.className = "gw";
+    // };
+    // gw_a.onmouseout = function(){
+    //   gw_a.className = "";
+    //   gw.className = "";
+    // };
+
+
+</script>
+</body>
+</html>

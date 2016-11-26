@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>360</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+    }
+    .nav-1{
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      background: #0da5d6;
+      position: absolute;
+      animation: index 0.1s linear forwards;
+    }
+    @keyframes index{
+      0%{
+
+      }
+      100%{
+        z-index: 1;
+      }
+    }
+    .nav-1 .logo{
+      width: 251px;
+      height: 186px;
+      background: url("./360/logo.png");
+      position: absolute;
+      left: 50%;
+      top: 100px;
+      margin-left: -125.5px;
+    }
+    .con{
+      width: 1000px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -10px;
+      margin-left: -500px;
+      display: flex;
+      justify-content: space-around;
+      transition: all 1s linear;
+      animation: run 2s linear 1 forwards;
+    }
+    .nav-1 .bottom{
+      width: 772px;
+      height: 49px;
+      background: url("./360/info_1.png");
+      position: absolute;
+      left: 50%;
+      margin-left: -386px;
+      bottom: 50px;
+    }
+    @keyframes run{
+      0%{
+        width: 1000px;
+        margin-left: -500px;
+        opacity: 0.3;
+      }
+      100%{
+        width: 800px;
+        margin-left: -400px;
+        opacity: 1;
+      }
+    }
+    .nav-2{
+      width: 100%;
+      height: 100%;
+      background: #2ab660;
+      position: absolute;
+      animation: index 0.1s linear forwards 5s;
+    }
+    .info-right{
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+    }
+    .info-right .info-1{
+      width: 635px;
+      height: 309px;
+      position: absolute;
+      background: url("./360/info_2.png") no-repeat;
+      top: 50%;
+      left: 50%;
+      margin-left: -317.5px;
+      margin-top: -154.5px;
+    }
+    .shield{
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+    }
+    .shield-1{
+      width: 430px;
+      height: 500px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -215px;
+      margin-top: -250px;
+    }
+    /*.nav-2:hover img{
+
+    }*/
+    @keyframes run1 {
+      0%{
+
+      }
+      100%{
+        transform: none;
+      }
+    }
+    .shield img{
+      transition: all 1s linear;
+      animation-name: run1;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-delay: 5.2s;
+
+    }
+    .shield img:nth-child(1){
+      transform: rotate(-135deg) scale(0.7) translate(50%,50%);
+    }
+    .shield img:nth-child(2){
+      transform: rotateX(180deg) scale(0.7) translate(50%,50%);
+    }
+    .shield img:nth-child(3){
+      transform: rotate(-45deg) scale(0.7) translate(50%,50%);
+    }
+    .shield img:nth-child(4){
+      transform-origin: left;
+      transform: rotateY(60deg) scale(0.7) translate(50%,50%);
+    }
+    .shield img:nth-child(5){
+      transform: rotate(45deg) scale(0.7) translate(50%,50%);
+    }
+    .shield img:nth-child(6){
+      transform-origin: right;
+      transform: rotateY(180deg) scale(0.7) translate(50%,50%);
+    }
+    .shield img:nth-child(7){
+      transform: rotate(45deg) scale(0.7) translate(50%,50%);
+    }
+    .shield img:nth-child(8){
+      transform: rotate(45deg) scale(0.7) translate(50%,50%);
+    }
+    .shield img:nth-child(9){
+      transform: rotate(45deg) scale(0.7) translate(50%,50%);
+    }
+    .nav-3{
+      width: 100%;
+      height: 100%;
+      background: #de8a10;
+      position: absolute;
+      animation: index 0.1s linear forwards 10s;
+    }
+    .info-left{
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+    }
+    .info-left .info-2 {
+      width: 631px;
+      height: 278px;
+      position: absolute;
+      background: url("./360/info_3.png") no-repeat;
+      top: 50%;
+      left: 50%;
+      margin-left: -315.5px;
+      margin-top: -139px;
+    }
+    .circle{
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+    }
+    .circle .circle-1{
+      width: 453px;
+      height: 449px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: url("./360/circle.png");
+      margin-left: -226.5px;
+      margin-top: -224.5px;
+    }
+    .circle .rocket{
+      width: 203px;
+      height: 204px;
+      position: absolute;
+      background: url("./360/rocket.png");
+      bottom: 0;
+      left: 50%;
+      margin-left: -101.5px;
+      opacity: 0;
+      transition: all 1s linear;
+      animation-name: run2;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-delay: 10.3s;
+
+    }
+    /*.nav-3:hover .rocket{
+
+    }*/
+    @keyframes run2 {
+      0%{
+
+      }
+      100%{
+        bottom: 50%;
+        margin-bottom: -102px;
+        opacity: 1;
+      }
+    }
+    .nav-4{
+      width: 100%;
+      height: 100%;
+      background: #16bb9d;
+      position: absolute;
+      animation: index 0.1s linear forwards 15s;
+    }
+    .info-right .info-3 {
+      width: 612px;
+      height: 299px;
+      position: absolute;
+      background: url("./360/info_4.png") no-repeat;
+      top: 50%;
+      left: 50%;
+      margin-left: -306px;
+      margin-top: -149.5px;
+    }
+    .search{
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+    }
+    .search .search-1{
+      width: 529px;
+      height: 440px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -264.5px;
+      margin-top: -220px;
+    }
+    .search .search-1 div{
+      transition: all 1s linear;
+      position: absolute;
+    }
+    .search .pi-1{
+      width: 0;
+      height: 22px;
+      top: 24px;
+      left: 20px;
+      background: url("./360/key.png");
+      animation: run3 1s linear 1 forwards 16s;
+    }
+    /*.nav-4:hover .pi-1{
+
+    }
+    .nav-4:hover .pi-2{
+
+    }
+    .nav-4:hover .pi-3{
+
+    }*/
+    .search .pi-2{
+      width: 529px;
+      height: 66px;
+      left: -100%;
+      background: url("./360/search.png");
+      animation: run4 1s linear 1 forwards 15s;
+    }
+    .search .pi-3{
+      width: 529px;
+      height: 0;
+      top: 53px;
+      background: url("./360/result.png");
+      animation: run5 1s linear 1 forwards 17s;
+    }
+    @keyframes run3{
+      0%{
+
+      }
+      100%{
+        width: 99px;
+      }
+    }
+    @keyframes run4{
+      0%{
+
+      }
+      100%{
+        left: 0;
+      }
+    }
+    @keyframes run5{
+      0%{
+
+      }
+      100%{
+        height: 372px;
+      }
+    }
+    .nav-5{
+      width: 100%;
+      height: 100%;
+      background: #0da5d6;
+      position: absolute;
+      animation: index 0.1s linear forwards 20s;
+    }
+    .info-top{
+      width: 1077px;
+      height: 134px;
+      background: url("./360/info_5.png");
+      position: absolute;
+      left: 50%;
+      margin-left: -538.5px;
+      top: 50px;
+    }
+    .toolbar{
+      width: 1004px;
+      height: 470px;
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      margin-left: -502px;
+      background: #32b3db;
+    }
+    .toolbar .toolbar-1{
+      width: 1004px;
+      height: 79px;
+      background: url("./360/toolbar.png");
+      position: absolute;
+      top: 0;
+    }
+    .toolbar .toolbar-2{
+      width: 0;
+      height: 26px;
+      position: absolute;
+      top: 31px;
+      left: 70px;
+      border: 1px solid #b4e2ef;
+      opacity: 0;
+      animation: run10 1s linear 1 forwards 24.5s;
+    }
+    .toolbar .extra{
+      width: 1004px;
+      height: 33px;
+      position: absolute;
+      bottom: 0;
+      border-top: 1px solid #b4e2ef;
+      background: url("./360/extra.png") right no-repeat;
+    }
+    .nav-5 .left{
+      /*height: 470px;*/
+      border-left: 1px solid #b4e2ef;
+      position: absolute;
+      left: 0;
+      transition: all 1s linear;
+      animation: run6 1s linear 1 forwards 20.5s;
+    }
+    .nav-5 .bottom{
+      /*width: 1004px;*/
+      border-bottom: 1px solid #b4e2ef;
+      position: absolute;
+      bottom: 0;
+      transition: all 1s linear;
+      animation: run7 1s linear 1 forwards 21.5s;
+    }
+    .nav-5 .right{
+      /*height: 470px;*/
+      border-right: 1px solid #b4e2ef;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transition: all 1s linear;
+      animation: run8 1s linear 1 forwards 22.5s;
+    }
+    .nav-5 .top{
+      /*width: 1004px;*/
+      border-top: 1px solid #b4e2ef;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 1s linear;
+      animation: run9 1s linear 1 forwards 23.5s;
+    }
+    /*.nav-5:hover .left{
+
+    }
+    .nav-5:hover .bottom{
+
+    }
+    .nav-5:hover .right{
+
+    }
+    .nav-5:hover .top{
+
+    }
+    .nav-5:hover .toolbar{
+
+    }*/
+    @keyframes run6 {
+      0%{
+        height: 0;
+      }
+      100%{
+        height: 470px;
+      }
+    }
+    @keyframes run7 {
+      0%{
+        width: 0;
+      }
+      100%{
+        width: 1004px;
+      }
+    }
+    @keyframes run8 {
+      0%{
+        height: 0;
+      }
+      100%{
+        height: 470px;
+      }
+    }
+    @keyframes run9 {
+      0%{
+        width: 0;
+      }
+      100%{
+        width: 1004px;
+      }
+    }
+    @keyframes run10{
+      0%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 1;
+        width: 920px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-1">
+    <div class="logo"></div>
+    <div class="con">
+      <img src="./360/text_1.png" alt="" />
+      <img src="./360/text_2.png" alt="" />
+      <img src="./360/text_3.png" alt="" />
+      <img src="./360/text_4.png" alt="" />
+      <img src="./360/text_5.png" alt="" />
+      <img src="./360/text_6.png" alt="" />
+      <img src="./360/text_7.png" alt="" />
+      <img src="./360/text_8.png" alt="" />
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <div class="nav-2">
+    <div class="info-right"><div class="info-1"></div></div>
+    <div class="shield">
+      <div class="shield-1">
+        <img src="./360/shield_1.png" alt="" />
+        <img src="./360/shield_2.png" alt="" />
+        <img src="./360/shield_3.png" alt="" />
+        <img src="./360/shield_4.png" alt="" />
+        <img src="./360/shield_5.png" alt="" />
+        <img src="./360/shield_6.png" alt="" />
+        <img src="./360/shield_7.png" alt="" />
+        <img src="./360/shield_8.png" alt="" />
+        <img src="./360/shield_9.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="nav-3">
+    <div class="info-left"><div class="info-2"></div></div>
+    <div class="circle"><div class="circle-1"></div><div class="rocket"></div></div>
+  </div>
+  <div class="nav-4">
+    <div class="info-right"><div class="info-3"></div></div>
+    <div class="search">
+      <div class="search-1">
+        <div class="pi-1"></div>
+        <div class="pi-2"></div>
+        <div class="pi-3"></div>
+     </div>
+    </div>
+  </div>
+  <div class="nav-5">
+    <div class="info-top"></div>
+    <div class="toolbar">
+      <div class="toolbar-1"></div>
+      <div class="toolbar-2"></div>
+      <div class="extra"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="top"></div>
+      <div class="bottom"></div>
+    </div>
+  </div>
+</body>
+</html>

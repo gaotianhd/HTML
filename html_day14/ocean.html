@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>海</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body,html{
+      width: 100%;
+      height: 100%;
+      background: lightblue;
+    }
+    .f1{
+      width: 100%;
+      height: 211px;
+      background: url("./day14/image/1.png");
+      position: absolute;
+      bottom: 0;
+      animation-name: f1;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-direction: alternate-reverse;
+    }
+    .f2{
+      width: 100%;
+      height: 235px;
+      background: url("./day14/image/2.png");
+      position: absolute;
+      bottom: 0;
+      animation-name: f2;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-direction: alternate-reverse;
+    }
+    @keyframes f1{
+      0%{
+        transform: translateY(-50px);
+      }
+      100%{
+        transform: translateY(0);
+      }
+    }
+    @keyframes f2{
+      0%{
+        transform: translateY(50px);
+      }
+      100%{
+        transform: translateY(0);
+      }
+    }
+    .sun{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+      border-radius: 25px;
+      background: yellow;
+    }
+    .sun::before,
+    .sun::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background: yellow;
+    }
+    .sun::before{
+      animation-name: sun1;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+    }
+    .sun::after{
+      animation-name: sun1;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+    }
+    @keyframes sun1{
+      0%{
+        opacity: 0.5;
+        transform: scale(1,1);
+      }
+      50%{
+        opacity: 0.3;
+        transform: scale(1.5,1.5);
+      }
+      100%{
+        opacity: 0.1;
+        transform: scale(2,2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sun"></div>
+  <div class="f1"></div>
+  <div class="f2"></div>
+</body>
+</html>

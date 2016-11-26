@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dndroid</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background-color: #d9d6c3;
+    }
+    .box{
+      width: 600px;
+      height: 440px;
+      background: gray;
+      margin: 50px auto;
+      position: relative;
+      float: left;
+      left: 50%;
+      margin-left: -300px;
+    }
+    .body{
+      width: 220px;
+      height: 180px;
+      background: yellow;
+      float: left;
+      position: absolute;
+      left: 50%;
+      margin-left: -110px;
+      top: 50%;
+      margin-top: -90px;
+      border-radius: 0 0 30px 30px;
+    }
+    .body:hover{
+      width: 100px;
+      height: 100px;
+      left: 50%;
+      margin-left: -50px;
+      top: 50%;
+      margin-top: -50px;
+      background: linear-gradient(to top,green,red);
+      transition: all 1s ease-in-out;
+    }
+    .body:hover~.left-foot{
+      width: 20px;
+      height: 50px;
+      left: 260px;
+      bottom: 125px;
+      background: blue;
+      transition: all 1s ease-in-out;
+      transform: rotate(20deg);
+    }
+    .body:hover~.right-foot{
+      width: 20px;
+      height: 50px;
+      right: 260px;
+      bottom: 125px;
+      background: blue;
+      transition: all 1s ease-in-out;
+      transform: rotate(-20deg);
+    }
+    .body:hover~.left-hand{
+      width: 20px;
+      height: 75px;
+      left: 225px;
+      top:170px;
+      background: pink;
+      transition: all 1s ease-in-out;
+      transform: rotate(45deg);
+    }
+    .body:hover~.right-hand{
+      width: 20px;
+      height: 75px;
+      right: 225px;
+      top:170px;
+      background: pink;
+      transition: all 1s ease-in-out;
+      transform: rotate(-45deg);
+    }
+    .body:hover~.head{
+      width: 80px;
+      height: 60px;
+      top: 100px;
+      left: 260px;
+      transition: all 0.5s ease-in;
+    }
+    .body:hover~.head>div{
+      width: 10px;
+      height: 10px;
+
+      transition: all 0.5s ease-in;
+    }
+    .head{
+      width: 220px;
+      height: 100px;
+      background: yellow;
+      float: left;
+      position: absolute;
+      top: 20px;
+      left: 190px;
+      border-radius: 100px 100px 0 0;
+    }
+    .left-hand,.right-hand{
+      width: 50px;
+      height: 150px;
+      background: red;
+      position: absolute;
+      border-radius: 25px;
+    }
+    .left-hand{
+      top: 150px;
+      left: 130px;
+    }
+    .right-hand{
+      top: 150px;
+      right: 130px;
+    }
+    .left-foot,.right-foot{
+      width: 50px;
+      height: 80px;
+      background: red;
+      position: absolute;
+      border-radius: 0 0 25px 25px;
+    }
+    .left-foot{
+      bottom: 50px;
+      left: 230px;
+    }
+    .right-foot{
+      bottom: 50px;
+      right: 230px;
+    }
+    .left-eye,.right-eye{
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 10px;
+    }
+    .left-eye{
+      position: absolute;
+      top: 50%;
+      left: 50px;
+    }
+    .right-eye{
+      position: absolute;
+      top: 50%;
+      right: 50px;
+    }
+    .z{
+      width: 100px;
+      height: 10px;
+      background-color: brown;
+      position: absolute;
+      left: 60px;
+      bottom: 10px;
+    }
+    .body:hover~.head>.z{
+      width: 30px;
+      height: 5px;
+      left: 25px;
+    }
+    .body:hover~.s{
+      opacity: 1;
+      bottom: 100px;
+      transition: all 0.5s ease-in;
+    }
+    .s{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      bottom: 145px;
+      left: 280px;
+      opacity: 0;
+    }
+      .f{
+        width: 5px;
+        height: 5px;
+        border-left: 4px solid brown;
+        border-radius: 30px 0 0 0;
+        margin-left: 20px;
+      }
+      .f1{
+        width:15px;
+        height: 5px;
+        border-top: 6px solid brown;
+        border-radius: 25px 25px 0 0;
+        margin-left: 14px;
+      }
+      .f2{
+        width: 25px;
+        height: 0px;
+        border-top: 10px solid brown;
+        border-radius: 25px 25px 0 0 ;
+        margin-left: 9px;
+        margin-top: -6px;
+      }
+      /*.shui{
+        width: 100px;
+        height: 200px;
+        position: absolute;
+        left: 250px;
+        top: 105px;
+        background: linear-gradient(to bottom,#78cdd1,#145b7d);
+        opacity: 0;
+      }
+      .body:hover~.shui{
+        width: 30px;
+        height: 150px;
+        left: 285px;
+        top: 150px;
+        transition: all 0.5s ease-in;
+        opacity: 1;
+      }*/
+      .right{
+        /*width: 50px;
+        height: 50px;*/
+        float: right;
+        border-radius: 30px;
+        position: relative;
+        top: 300px;
+        right: -20px;
+        background: radial-gradient(50px at center, #7c8577,#9d9087);
+        background-image: radial-gradient(50px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        transition: all 1s linear;
+        overflow: hidden;
+      }
+
+       /*.a1{
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background: yellow;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-image: radial-gradient(30px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        transition: all 2s linear;
+      }*/
+      .right:hover li{
+        /*transform: rotate(360deg);*/
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        background-image: radial-gradient(300px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        opacity: 1;
+        color: #f2eada;
+      }
+      ul{
+        list-style: none;
+      }
+      .right li{
+        transition: all 0.5s linear;
+        text-align: center;
+        width: 60px;
+        height: 20px;
+        line-height: 20px;
+        opacity: 0;
+        box-shadow: 0 0 5px white;
+        /*background-image: radial-gradient(300px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));*/
+      }
+      .right li:hover{
+        background-color: #d9d6c3;
+        margin-top: -5px;
+      }
+      .right li a{
+         color: #f2eada;
+      }
+      a{
+        text-decoration: none;
+      }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="body"></div>
+    <div class="head">
+      <div class="left-eye"></div>
+      <div class="right-eye"></div>
+      <div class="z"></div>
+    </div>
+    <div class="left-hand"></div>
+    <div class="right-hand"></div>
+    <div class="left-foot"></div>
+    <div class="right-foot"></div>
+    <div class="s">
+      <div class="f"></div>
+      <div class="f1"></div>
+      <div class="f2"></div>
+    </div>
+    <div class="shui"></div>
+  </div>
+  <ul class="right">
+    <li><a href="#">video</a></li>
+    <li><a href="#">music</a></li>
+    <li><a href="#">xxxx</a></li>
+  </ul>
+
+</body>
+</html>

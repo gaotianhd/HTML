@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>小车</title>
+  <style media="screen">
+    .f{
+      width: 100px;
+      height: 40px;
+      background: url("./day14/image/car.jpg");
+      background-size: 100% 100%;
+      margin-top: 100px;
+
+    }
+    @keyframes run{
+      0%{
+        transform: skewX(30deg);
+      }
+      80%{
+        transform:skewX(-30deg) translateX(800px);
+      }
+      100%{
+        /*margin-left: 500px;*/
+        transform: skewX(0deg) translateX(800px);
+      }
+    }
+    .f:hover{
+      animation-name: run;
+      animation-duration: 2s;
+      animation-iteration-count:1;
+      /*animation-timing-function: steps(10);*/
+    }
+  </style>
+</head>
+<body>
+  <div class="f"></div>
+</body>
+</html>

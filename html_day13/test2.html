@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3d移动</title>
+  <style media="screen">
+    body{
+      perspective: 400px;
+      /*透视效果应用在父盒子*/
+    }
+    .f{
+      width: 200px;
+      height: 200px;
+      background: yellow;
+      transition: all 1s linear;
+    }
+    .f:hover{
+      /*必须要有透视值Z轴*/
+      transform: translateX(400px) translateY(200px) translateZ(-200px);
+    }
+  </style>
+</head>
+<body>
+  <div class="f"></div>
+</body>
+</html>

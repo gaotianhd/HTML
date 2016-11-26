@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>小米</title>
+  <!-- <script type="text/javascript">
+  function f2(){
+    var f2 = document.getElementById("box1");
+    f2.style.backgroundImage = "url(./xiaomi-image/banner.jpg)";
+  }
+  function f1(){
+    var f1 = document.getElementById("box1");
+    f1.style.backgroundImage = "url(./xiaomi-image/xiaomi.jpg)";
+  }
+  </script> -->
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      width: 1226px;
+      height: 460px;
+      background: url("./xiaomi-image/xiaomi.jpg");
+      margin: 10px auto;
+      position: relative;
+    }
+    .left a,.right a{
+      width: 41px;
+      height: 69px;
+      position: absolute;
+      /*相对于父盒子的高度的一半，设置相对于父盒子的垂直居中*/
+      top: 50%;
+      margin-top: -34px;
+      cursor: pointer;/*让鼠标变成小手*/
+    }
+    .left a{
+      background: url("./xiaomi-image/arr_r1_c5.png");
+      left: 280px;
+    }
+    .left a:hover{
+      background: url("./xiaomi-image/arrow_r1_c1.png");
+    }
+    .right a{
+      background: url("./xiaomi-image/arr_r1_c7.png");
+      right: 10px;
+    }
+    .right a:hover{
+      background: url("./xiaomi-image/arrow_r1_c3.png");
+    }
+    ul{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+    }
+    .sum{
+      width: 120px;
+      height: 20px;
+      position: absolute;
+      bottom: 20px;
+      /*设置相对于父盒子水平居中*/
+      left:50%;
+      margin-left: -60px;
+    }
+    .sum li{
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 10px;
+      float: left;
+      background-color: #666;
+      cursor: pointer;
+    }
+    /*两种方法设置鼠标滑动到标签的事件。*/
+    /*可以直接设置li的鼠标滑动，然后选择后代就都是这样*/
+    .sum li:hover a{
+      color: blue;
+    }
+    .sum li a{
+      color: white;
+    }
+    /*.sum li a{
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      color: white;
+    }
+    .sum li a:hover{
+      color: blue;
+    }*/
+  </style>
+
+</head>
+<body>
+  <!-- 下面加id = "box1" -->
+  <div class="box">
+    <div class="left"><a href="#"></a></div>
+    <div class="right"><a href="#"></a></div>
+    <div class="sum">
+      <ul>
+        <!-- 第一个li：onclick="f1()"
+             第二个li：onclick="f2()"-->
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

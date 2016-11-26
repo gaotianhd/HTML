@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>before,after 伪元素</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+    }
+
+    /*before伪元素的内容被添加到一个元素最开始位置*/
+    ul li:first-child::before{
+      content: "I am before aaaaaa";
+    }
+    ul li:last-child::after{
+      content: "I am after"
+    }
+    p::selection{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li> aaaaaa </li>
+    <li> bbbbbb </li>
+  </ul>
+  <p>说大姐还是大家看更好</p>
+</body>
+</html>

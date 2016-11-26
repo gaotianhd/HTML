@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>伸缩盒子</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+    }
+    .box{
+      width: 1000px;
+      margin: 50px auto;
+      box-shadow: 0 0 50px black;
+    }
+    .box h2{
+      text-align: center;
+    }
+    .box ul{
+      min-height: 600px;
+      display: flex;/*设置的是父盒子 里面的元素都变成了行内块元素*/
+      justify-content: space-around;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+    }
+    .box ul li{
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+      background: pink;
+      text-align: center;
+      line-height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <section class="box">
+    <h2>伸缩盒子</h2>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+    </ul>
+  </section>
+</body>
+</html>

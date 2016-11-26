@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>calender</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .clearfix::before,
+    .clearfix::after {
+      content: "";
+      display: block;
+      height: 0;
+      visibility: hidden;
+      clear:both;
+    }
+    .clearfix {
+      zoom: 1;
+    }
+    .nav{
+      width: 538px;
+      height: 370px;
+      margin: 100px auto;
+      /*border: 1px solid blue;*/
+      background: url("calender.jpg");
+    }
+    ul{
+      list-style: none;
+      padding-top: 30px;
+    }
+    .nav ul li {
+      border-bottom: 1px solid black;
+      width: 402px;
+    }
+    .nav ul li:first-child{
+      height: 50px;
+      line-height: 50px;
+    }
+    .nav ul li:last-child{
+      border: none;
+    }
+    .nav ul li:first-child span{
+      height: 45px;
+      line-height: 45px;
+    }
+    .nav ul li span{
+      text-align: center;
+      display: inline-block;
+      width: 53px;
+      height: 53px;
+      line-height: 55px;
+      float: left;
+      border: 2px solid transparent;
+
+    }
+
+    .nav ul li:nth-child(2) span:first-child{
+      color: #bababb;
+    }
+    .nav ul li:nth-child(2) span:nth-child(2){
+      background-color: #ffba00;
+    }
+    .nav ul li:not(:first-child) span:hover{
+      border: 2px solid #ffba00;
+    }
+    .nav ul li:last-child span[class="a"]{
+      color: #bababb;
+    }
+    .nav ul li span[class="b"]{
+      color: #9a281d;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <ul>
+     <li class="clearfix">
+      <span>一</span>
+      <span>二</span>
+      <span>三</span>
+      <span>四</span>
+      <span>五</span>
+      <span class="b">六</span>
+      <span class="b">日</span>
+     </li>
+     <li class="clearfix">
+      <span>30</span>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span class="b">5</span>
+      <span class="b">6</span>
+     </li>
+     <li class="clearfix">
+      <span>7</span>
+      <span>8</span>
+      <span>9</span>
+      <span>10</span>
+      <span>11</span>
+      <span class="b">12</span>
+      <span class="b">13</span>
+     </li>
+     <li class="clearfix">
+      <span>14</span>
+      <span>15</span>
+      <span>16</span>
+      <span>17</span>
+      <span>18</span>
+      <span class="b">19</span>
+      <span class="b">20</span>
+     </li>
+     <li class="clearfix">
+      <span>21</span>
+      <span>22</span>
+      <span>23</span>
+      <span>24</span>
+      <span>25</span>
+      <span class="b">26</span>
+      <span class="b">27</span>
+     </li>
+     <li class="clearfix">
+      <span>28</span>
+      <span>29</span>
+      <span>30</span>
+      <span>31</span>
+      <span class="a">1</span>
+      <span class="a">2</span>
+      <span class="a">3</span>
+     </li>
+    </ul>
+  </div>
+</body>
+</html>

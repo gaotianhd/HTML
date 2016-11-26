@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>2d转换</title>
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+    .f{
+      width: 200px;
+      height: 200px;
+      background: yellow;
+      transition: all 1s linear;
+      margin: 50px auto;
+    }
+    .f:hover{
+      /*修改盒子转换的原点 主要用于rotate*/
+      transform-origin: left top;
+
+      /*相对于原先位置偏移多少位置 百分比是相对于自身宽高的百分比*/
+      /*transform: translate(-200px,50%);*/
+
+      /*x方向放大2倍，y方向一半*/
+      /*transform: scale(2, 0.5);*/
+
+      /*旋转单位可以是deg代表一度，也可以是turn代表360度*/
+      transform: rotate(45deg);
+
+      /*向x,y轴方向拉伸*/
+      /*transform: skew(45deg,45deg);*/
+      transition: all 2s linear;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="f"></div>
+</body>
+</html>

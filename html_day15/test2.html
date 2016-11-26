@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>justify-content 属性</title>
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+.box {
+  width: 1000px;
+  margin: 50px auto;
+  box-shadow:  0 0 50px gray;
+}
+.box h2 {
+  text-align: center;
+}
+.box ul {
+  min-height: 300px;
+  display: flex; /*设置是父盒子*/
+}
+ .box ul li {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  margin: 20px;
+  background: pink;
+}
+.flex-start ul {
+  justify-content: flex-start;
+  /*向左面靠近*/
+}
+
+.flex-end ul {
+  justify-content: flex-end;
+  /*向右面靠近*/
+}
+
+.center ul {
+  justify-content: center;
+  /*居中*/
+}
+
+.between ul {
+  justify-content: space-between;
+  /*多余的部分平分给每个盒子，但是两边的margin不变*/
+}
+
+.around ul {
+  justify-content: space-around;
+  /*多余的部分平分给每个盒子两边，改变设置的margin*/
+}
+</style>
+</head>
+<body>
+
+<section class="box flex-start">
+  <h2> flex-start</h2>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</section>
+
+
+<section class="box flex-end">
+  <h2> flex-end</h2>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</section>
+
+
+<section class="box center">
+  <h2>center</h2>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</section>
+
+<section class="box between">
+  <h2>between</h2>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</section>
+
+<section class="box around">
+  <h2>around</h2>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</section>
+</body>
+</html>

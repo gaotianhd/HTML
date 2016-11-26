@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>background-origin</title>
+  <style media="screen">
+  .f {
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    margin: 50px auto;
+    border: 10px dashed red;
+    background: url("./day11/images/bg.jpg") no-repeat;
+    /*background-origin: border-box;*/
+    /*background-origin: padding-box;*/
+    background-origin: content-box;
+
+    /*使用repeat时，background-origin没作用*/
+    /*background-repeat: repeat;*/
+
+    /*此处background-position的原点由background-origin决定*/
+    /*background-position: 10px 10px;*/
+  }
+  </style>
+</head>
+<body>
+  <div class="f"></div>
+</body>
+</html>

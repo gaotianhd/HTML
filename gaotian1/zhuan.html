@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+      background: #ff794e;
+    }
+    .nav{
+      width: 600px;
+      height: 300px;
+      margin: 100px auto;
+    }
+    ul{
+      list-style: none;
+    }
+    ul li{
+      width: 100px;
+      height: 200px;
+      float: left;
+      margin-left: 5px;
+      background: #e66a45;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2), 0 4px 0 rgba(255, 255, 255, 0.2);
+    }
+    ul li:before{
+      content: "";
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 150px;
+      left: 0;
+      border-radius: 50px;
+      background: #cf5a3d;
+    }
+    ul li:after{
+      content: "";
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 170px;
+      left: 20px;
+      border-radius: 40px;
+      background: #e66a45;
+
+    }
+    .top{
+      width: 100px;
+      height: 55px;
+      border-radius: 10px;
+      background: #555;
+      text-align: center;
+      line-height: 55px;
+      position: absolute;
+      top: 5px;
+      box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2), inset 0 4px 0 rgba(255, 255, 255, 0.2);
+      animation: piston 1s ease-in-out infinite;
+    }
+    .gan {
+      content: "";
+      width: 20px;
+      height: 130px;
+      background: #555;
+      position: absolute;
+      top: 35px;
+      left: 50%;
+      margin-left: -10px;
+      border-radius: 10px;
+      transform-origin: top;
+      box-shadow: inset 0 -22px 0 rgba(0, 0, 0, 0.2);
+      animation: arm 1s cubic-bezier(0, 0, 1 ,1) infinite;
+      z-index: 1;
+    }
+    ul li:nth-child(1)>div{
+      animation-delay: 0.1s;
+    }
+    ul li:nth-child(2)>div{
+      animation-delay: 0.2s;
+    }
+    ul li:nth-child(3)>div{
+      animation-delay: 0.3s;
+    }
+    ul li:nth-child(4)>div{
+      animation-delay: 0.4s;
+    }
+    ul li:nth-child(5)>div{
+      animation-delay: 0.5s;
+    }
+    ul li:nth-child(1) .gan{
+      animation-delay: 0.1s;
+    }
+    ul li:nth-child(2) .gan{
+      animation-delay: 0.2s;
+    }
+    ul li:nth-child(3) .gan{
+      animation-delay: 0.3s;
+    }
+    ul li:nth-child(4) .gan{
+      animation-delay: 0.4s;
+    }
+    ul li:nth-child(5) .gan{
+      animation-delay: 0.5s;
+    }
+    .gan::before{
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background: white;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -10px;
+      transform-origin: center 10px;
+      /*animation: arm 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;*/
+    }
+    @keyframes piston {
+        0% {
+            margin-top: 0;
+        }
+        50% {
+            margin-top: 80px;
+        }
+        100% {
+            margin-top: 0;
+        }
+    }
+
+    @keyframes arm {
+        0% {
+            /*top: 40px;*/
+            transform: rotate(0);
+        }
+        25% {
+            /*top: 80px;*/
+            transform: rotate(-20deg);
+        }
+        50% {
+            /*top: 120px;*/
+            transform: rotate(0);
+        }
+        75% {
+            /*top: 80px;*/
+            transform: rotate(20deg);
+        }
+        100% {
+            /*top: 40px;*/
+            transform: rotate(0);
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <ul>
+      <li><div class="r top">R<div class="gan"></div></div></li>
+      <li><div class="o top">O<div class="gan"></div></div></li>
+      <li><div class="b top">B<div class="gan"></div></div></li>
+      <li><div class="o1 top">O<div class="gan"></div></div></li>
+      <li><div class="t top">T<div class="gan"></div></div></li>
+    </ul>
+  </div>
+</body>
+</html>

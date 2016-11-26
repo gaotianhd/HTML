@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css设置表格</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    table{
+      width: 300px;
+      /*height: 300px;*/
+      border: 1px solid green;
+      margin: 100px auto;
+      /*这是表格特有的属性，针对表格去掉表格间隙*/
+      border-collapse: collapse;
+      text-align: center;
+
+    }
+    td,th{
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>姓名</th>
+      <th>性别</th>
+      <th>年龄</th>
+    </tr>
+    <tr>
+      <td>小明</td>
+      <td>男</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>小明</td>
+      <td>男</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>小明</td>
+      <td>男</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>小明</td>
+      <td>男</td>
+      <td>12</td>
+    </tr>
+  </table>
+</body>
+</html>

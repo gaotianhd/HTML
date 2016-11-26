@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dndroid</title>
+  <style media="screen">
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background-color: #d9d6c3;
+      /*perspective: 400px;*/
+    }
+    .top{
+      width: 100%;
+      height: 40px;
+      background-color: #333;
+      color: #b0b0b0;
+    }
+    .box{
+      width: 600px;
+      height: 440px;
+      background: gray;
+      margin: 50px auto;
+      position: relative;
+      float: left;
+      left: 50%;
+      margin-left: -300px;
+      /*perspective: 400px;*/
+    }
+    .body{
+      width: 220px;
+      height: 180px;
+      background: yellow;
+      float: left;
+      position: absolute;
+      left: 50%;
+      margin-left: -110px;
+      top: 50%;
+      margin-top: -90px;
+      border-radius: 0 0 30px 30px;
+      background-image: radial-gradient(220px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+      transition: all 1s ease-in-out;
+    }
+    .body:hover{
+      width: 100px;
+      height: 100px;
+      left: 50%;
+      margin-left: -50px;
+      top: 50%;
+      margin-top: -50px;
+      background: linear-gradient(to top,green,red);
+      transition: all 2s ease-in-out;
+      /*transform: rotate3d(5,5,5,-360deg);*/
+      animation-name: run1 ;
+      animation-duration: 2s;
+      animation-timing-function: steps(100);
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    .body:hover~.left-foot{
+      width: 20px;
+      height: 50px;
+      left: 260px;
+      bottom: 125px;
+      background: blue;
+      transition: all 1s ease-in-out;
+      /*transform: rotate(20deg);*/
+      transform: rotate3d(5,5,5,380deg);
+    }
+    .body:hover~.right-foot{
+      width: 20px;
+      height: 50px;
+      right: 260px;
+      bottom: 125px;
+      background: blue;
+      transition: all 1s ease-in-out;
+      /*transform: rotate(-20deg);*/
+      transform: rotate3d(5,5,5,340deg);
+    }
+    .body:hover~.left-hand{
+      width: 20px;
+      height: 75px;
+      left: 225px;
+      top:170px;
+      background: pink;
+      transition: all 1s ease-in-out;
+      /*transform: rotate(45deg);*/
+      transform: rotate3d(5,5,5,405deg);
+    }
+    .body:hover~.right-hand{
+      width: 20px;
+      height: 75px;
+      right: 225px;
+      top:170px;
+      background: pink;
+      transition: all 1s ease-in-out;
+      /*transform: rotate(-45deg);*/
+      transform: rotate3d(5,5,5,325deg);
+    }
+    .body:hover~.head{
+      width: 80px;
+      height: 60px;
+      top: 100px;
+      left: 260px;
+      transition: all 0.5s ease-in;
+      transform: rotate3d(5,5,5,360deg);
+      animation-name: run1 ;
+      animation-duration: 2s;
+      animation-timing-function: steps(100);
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    .body:hover~.head>div{
+      width: 10px;
+      height: 10px;
+      transform: rotate3d(5,5,5,360deg);
+      transition: all 0.5s ease-in;
+    }
+    .head{
+      width: 220px;
+      height: 100px;
+      background: yellow;
+      float: left;
+      position: absolute;
+      top: 20px;
+      left: 190px;
+      border-radius: 100px 100px 0 0;
+      background-image: radial-gradient(220px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+    }
+    .left-hand,.right-hand{
+      width: 50px;
+      height: 150px;
+      background: red;
+      position: absolute;
+      border-radius: 25px;
+      background-image: radial-gradient(150px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+    }
+    .left-hand{
+      top: 150px;
+      left: 130px;
+
+    }
+    .right-hand{
+      top: 150px;
+      right: 130px;
+
+    }
+    .left-foot,.right-foot{
+      width: 50px;
+      height: 80px;
+      background: red;
+      position: absolute;
+      border-radius: 0 0 25px 25px;
+      background-image: radial-gradient(80px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+    }
+    .left-foot{
+      bottom: 50px;
+      left: 230px;
+    }
+    .right-foot{
+      bottom: 50px;
+      right: 230px;
+    }
+    .left-eye,.right-eye{
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 10px;
+      background-image: radial-gradient(20px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+    }
+    .left-eye{
+      position: absolute;
+      top: 50%;
+      left: 50px;
+    }
+    .right-eye{
+      position: absolute;
+      top: 50%;
+      right: 50px;
+    }
+    .z{
+      width: 100px;
+      height: 10px;
+      background-color: brown;
+      position: absolute;
+      left: 60px;
+      bottom: 10px;
+      background-image: radial-gradient(100px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+    }
+    .body:hover~.head>.z{
+      width: 30px;
+      height: 5px;
+      left: 25px;
+    }
+    .body:hover~.s{
+      opacity: 1;
+      bottom: 100px;
+      transition: all 0.5s ease-in;
+      transform: rotate3d(5,5,5,360deg);
+    }
+    .s{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      bottom: 145px;
+      left: 280px;
+      opacity: 0;
+    }
+      .f{
+        width: 5px;
+        height: 5px;
+        border-left: 4px solid brown;
+        border-radius: 30px 0 0 0;
+        margin-left: 20px;
+      }
+      .f1{
+        width:15px;
+        height: 5px;
+        border-top: 6px solid brown;
+        border-radius: 25px 25px 0 0;
+        margin-left: 14px;
+      }
+      .f2{
+        width: 25px;
+        height: 0px;
+        border-top: 10px solid brown;
+        border-radius: 25px 25px 0 0 ;
+        margin-left: 9px;
+        margin-top: -6px;
+      }
+      /*.shui{
+        width: 100px;
+        height: 200px;
+        position: absolute;
+        left: 250px;
+        top: 105px;
+        background: linear-gradient(to bottom,#78cdd1,#145b7d);
+        opacity: 0;
+      }
+      .body:hover~.shui{
+        width: 30px;
+        height: 150px;
+        left: 285px;
+        top: 150px;
+        transition: all 0.5s ease-in;
+        opacity: 1;
+      }*/
+      .right{
+        /*width: 50px;
+        height: 50px;*/
+        float: right;
+        border-radius: 30px;
+        position: relative;
+        top: 300px;
+        right: -20px;
+        background: radial-gradient(50px at center, #7c8577,#9d9087);
+        background-image: radial-gradient(50px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        transition: all 1s linear;
+        overflow: hidden;
+      }
+      .right:hover li {
+        /*transform: rotate(360deg);*/
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        background-image: radial-gradient(300px at 10px 10px,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        opacity: 1;
+        color: #f2eada;
+      }
+      ul{
+        list-style: none;
+      }
+      .right li {
+        transition: all 0.5s linear;
+        text-align: center;
+        width: 60px;
+        height: 20px;
+        line-height: 20px;
+        opacity: 0;
+        box-shadow: 0 0 5px white;
+      }
+      .right li:hover {
+        background-color: #72777b;
+        margin-top: -5px;
+        font-size: 50px;
+        transform: rotate3d(5,5,10,360deg) scale3d(0.7,0.7,0.7);
+      }
+      .right li a{
+         color: #f2eada;
+      }
+      a{
+        text-decoration: none;
+      }
+      .left-list{
+        width: 100px;
+        height: 380px;
+        float: left;
+        position: relative;
+        top: 50px;
+        left: -300px;
+        background: black;
+      }
+      .left-list ul li a{
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        border-top: 1px solid #72777b;
+        border-bottom: 1px solid #72777b;
+        color: #72777b;
+        position: relative;
+      }
+      .left-list ul li:first-child{
+        margin-top: 40px;
+      }
+      .left-list ul li a:hover{
+        color: white;
+        box-shadow: 0 0 10px white;
+      }
+      .left-list ul li a::before{
+        content: "";
+        display: block;
+        width: 0px;
+        height: 50px;
+        position: absolute;
+        background: #a1a3a6;
+        top: 0;
+        right: 0;
+        float: right;
+        transition: all 0.5s linear;
+        overflow: hidden;
+      }
+      .left-list ul li a:hover::before{
+        width: 100px;
+        height: 200px;
+        border-radius: 0 20px 20px 0;
+        right: -100px;
+        opacity: 0.5;
+        transform: rotate3d(5,5,5,180deg) skewX(-360deg);
+        box-shadow: 2px 2px 10px yellow;
+      }
+      .left-list a ul{
+        width: 0px;
+        height: 50px;
+        overflow: hidden;
+        float: right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.5s linear;
+
+      }
+      .left-list a:hover ul{
+        width: 100px;
+        height: 300px;
+        right: -100px;
+        top: -40px;
+        color: #72777b;
+        transform: rotate3d(10,10,10,360deg) skewX(360deg);
+      }
+      .left-list a ul li:hover{
+        color: white;
+      }
+      .left-list a:hover ul li{
+        width: 100px;
+        /*height: 300px;*/
+        background: #563624;
+        right: -100px;
+        top: -50px;
+        border-radius: 0 20px 20px 0;
+        box-shadow: 1px 1px 5px yellow;
+      }
+
+      /*.ball{
+        width: 200px;
+        height: 200px;
+        background: yellow;
+        float: left;
+        position: relative;
+        left: -200px;
+        top: 200px;
+        border-radius: 100px;
+        background-image: radial-gradient(200px at 50px 50px ,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        animation-name: identifier ;
+        animation-duration: 2s;
+        animation-timing-function: steps(100);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes identifier {
+      0%{
+        transition: all 2s linear;
+        background: #d71345;
+        transform: rotate3d(50,0,0,0deg);
+      }
+      10%{
+        transition: all 2s linear;
+        background: #deab8a;
+        transform: rotate3d(50,0,0,90deg);
+      }
+      20%{
+        transition: all 2s linear;
+        background: #817936;
+        transform: rotate3d(50,0,0,180deg);
+      }
+      30%{
+        transition: all 2s linear;
+        background: #444693;
+        transform: rotate3d(50,0,0,270deg);
+      }
+      40%{
+        transition: all 2s linear;
+        background: #ef5b9c;
+        transform: rotate3d(50,0,0,360deg);
+      }
+      50%{
+        transition: all 2s linear;
+        background: #f47920;
+        transform: rotate3d(50,0,0,450deg);
+      }
+      60%{
+        transition: all 2s linear;
+        background: #80752c;
+        transform: rotate3d(50,0,0,540deg);
+      }
+      70%{
+        transition: all 2s linear;
+        background: #2a5caa;
+        transform: rotate3d(50,0,0,630deg);
+      }
+      80%{
+        transition: all 2s linear;
+        background: #f8aba6;
+        transform: rotate3d(50,0,0,720deg);
+      }
+      90%{
+        transition: all 2s linear;
+        background: green;
+        transform: rotate3d(50,0,0,810deg);
+      }
+      100%{
+        transition: all 2s linear;
+        background: gray;
+        transform: rotate3d(50,0,0,900deg);
+      }
+      }
+      .ball1{
+        width: 200px;
+        height: 200px;
+        background: yellow;
+        float: left;
+        position: relative;
+        left: -400px;
+        top: 200px;
+        border-radius: 100px;
+        background-image: radial-gradient(200px at 50px 50px ,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        animation-name: run1 ;
+        animation-duration: 2s;
+        animation-timing-function: steps(100);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes run1 {
+      0%{
+        transition: all 2s linear;
+        background: #d71345;
+        transform: rotate3d(0,50,0,0deg);
+      }
+      10%{
+        transition: all 2s linear;
+        background: #deab8a;
+        transform: rotate3d(0,50,0,90deg);
+      }
+      20%{
+        transition: all 2s linear;
+        background: #817936;
+        transform: rotate3d(0,50,0,180deg);
+      }
+      30%{
+        transition: all 2s linear;
+        background: #444693;
+        transform: rotate3d(0,50,0,270deg);
+      }
+      40%{
+        transition: all 2s linear;
+        background: #ef5b9c;
+        transform: rotate3d(0,50,0,360deg);
+      }
+      50%{
+        transition: all 2s linear;
+        background: #f47920;
+        transform: rotate3d(0,50,0,450deg);
+      }
+      60%{
+        transition: all 2s linear;
+        background: #80752c;
+        transform: rotate3d(0,50,0,540deg);
+      }
+      70%{
+        transition: all 2s linear;
+        background: #2a5caa;
+        transform: rotate3d(0,50,0,630deg);
+      }
+      80%{
+        transition: all 2s linear;
+        background: #f8aba6;
+        transform: rotate3d(0,50,0,720deg);
+      }
+      90%{
+        transition: all 2s linear;
+        background: green;
+        transform: rotate3d(0,50,0,810deg);
+      }
+      100%{
+        transition: all 2s linear;
+        background: gray;
+        transform: rotate3d(0,50,0,900deg);
+      }
+      }
+      .ball2{
+        width: 200px;
+        height: 200px;
+        background: yellow;
+        float: left;
+        position: relative;
+        left: -600px;
+        top: 200px;
+        border-radius: 100px;
+        background-image: radial-gradient(200px at 50px 50px ,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        animation-name: run2 ;
+        animation-duration: 2s;
+        animation-timing-function: steps(100);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes run2 {
+      0%{
+        transition: all 2s linear;
+        background: #d71345;
+        transform: rotate3d(5,5,0,0deg);
+      }
+      10%{
+        transition: all 2s linear;
+        background: #deab8a;
+        transform: rotate3d(5,5,0,90deg);
+      }
+      20%{
+        transition: all 2s linear;
+        background: #817936;
+        transform: rotate3d(5,5,0,180deg);
+      }
+      30%{
+        transition: all 2s linear;
+        background: #444693;
+        transform: rotate3d(5,5,0,270deg);
+      }
+      40%{
+        transition: all 2s linear;
+        background: #ef5b9c;
+        transform: rotate3d(5,5,0,360deg);
+      }
+      50%{
+        transition: all 2s linear;
+        background: #f47920;
+        transform: rotate3d(5,5,0,450deg);
+      }
+      60%{
+        transition: all 2s linear;
+        background: #80752c;
+        transform: rotate3d(5,5,0,540deg);
+      }
+      70%{
+        transition: all 2s linear;
+        background: #2a5caa;
+        transform: rotate3d(5,5,0,630deg);
+      }
+      80%{
+        transition: all 2s linear;
+        background: #f8aba6;
+        transform: rotate3d(5,5,0,720deg);
+      }
+      90%{
+        transition: all 2s linear;
+        background: green;
+        transform: rotate3d(5,5,0,810deg);
+      }
+      100%{
+        transition: all 2s linear;
+        background: gray;
+        transform: rotate3d(5,5,0,900deg);
+      }
+      }
+      .ball3{
+        width: 200px;
+        height: 200px;
+        background: yellow;
+        float: left;
+        position: relative;
+        left: -800px;
+        top: 200px;
+        border-radius: 100px;
+        background-image: radial-gradient(200px at 50px 50px ,rgba(0,0,0,0),rgba(0,0,0,0.8));
+        animation-name: run3 ;
+        animation-duration: 2s;
+        animation-timing-function: steps(100);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes run3 {
+      0%{
+        transition: all 2s linear;
+        background: #d71345;
+        transform: rotate3d(-5,5,0,0deg);
+      }
+      10%{
+        transition: all 2s linear;
+        background: #deab8a;
+        transform: rotate3d(-5,5,0,90deg);
+      }
+      20%{
+        transition: all 2s linear;
+        background: #817936;
+        transform: rotate3d(-5,5,0,180deg);
+      }
+      30%{
+        transition: all 2s linear;
+        background: #444693;
+        transform: rotate3d(-5,5,0,270deg);
+      }
+      40%{
+        transition: all 2s linear;
+        background: #ef5b9c;
+        transform: rotate3d(-5,5,0,360deg);
+      }
+      50%{
+        transition: all 2s linear;
+        background: #f47920;
+        transform: rotate3d(-5,5,0,450deg);
+      }
+      60%{
+        transition: all 2s linear;
+        background: #80752c;
+        transform: rotate3d(-5,5,0,540deg);
+      }
+      70%{
+        transition: all 2s linear;
+        background: #2a5caa;
+        transform: rotate3d(-5,5,0,630deg);
+      }
+      80%{
+        transition: all 2s linear;
+        background: #f8aba6;
+        transform: rotate3d(-5,5,0,720deg);
+      }
+      90%{
+        transition: all 2s linear;
+        background: green;
+        transform: rotate3d(-5,5,0,810deg);
+      }
+      100%{
+        transition: all 2s linear;
+        background: gray;
+        transform: rotate3d(-5,5,0,900deg);
+      }
+      }
+      .ball4{
+        width: 200px;
+        height: 200px;
+        background: yellow;
+        float: left;
+        position: relative;
+        left: 100px;
+        top: 200px;
+        border-radius: 100px;
+        background-image: radial-gradient(200px at 50px 50px ,rgba(0,0,0,0),rgba(0,0,0,0.8));
+      }
+      .ball4:hover{
+        animation-name: run1 ;
+        animation-duration: 2s;
+        animation-timing-function: steps(100);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      @keyframes run4 {
+      0%{
+        transition: all 2s linear;
+        background: #d71345;
+        transform: rotate3d(-5,10,10,0deg);
+      }
+      10%{
+        transition: all 2s linear;
+        background: #deab8a;
+        transform: rotate3d(-5,10,10,90deg);
+      }
+      20%{
+        transition: all 2s linear;
+        background: #817936;
+        transform: rotate3d(-5,10,10,180deg);
+      }
+      30%{
+        transition: all 2s linear;
+        background: #444693;
+        transform: rotate3d(-5,10,10,270deg);
+      }
+      40%{
+        transition: all 2s linear;
+        background: #ef5b9c;
+        transform: rotate3d(-5,10,10,360deg);
+      }
+      50%{
+        transition: all 2s linear;
+        background: #f47920;
+        transform: rotate3d(-5,10,10,450deg);
+      }
+      60%{
+        transition: all 2s linear;
+        background: #80752c;
+        transform: rotate3d(-5,10,10,540deg);
+      }
+      70%{
+        transition: all 2s linear;
+        background: #2a5caa;
+        transform: rotate3d(-5,10,10,630deg);
+      }
+      80%{
+        transition: all 2s linear;
+        background: #f8aba6;
+        transform: rotate3d(-5,10,10,720deg);
+      }
+      90%{
+        transition: all 2s linear;
+        background: green;
+        transform: rotate3d(-5,10,10,810deg);
+      }
+      100%{
+        transition: all 2s linear;
+        background: gray;
+        transform: rotate3d(-5,10,10,900deg);
+      }
+      }*/
+  </style>
+</head>
+<body>
+  <div class="top"></div>
+  <div class="box">
+    <div class="body"></div>
+    <div class="head">
+      <div class="left-eye"></div>
+      <div class="right-eye"></div>
+      <div class="z"></div>
+    </div>
+    <div class="left-hand"></div>
+    <div class="right-hand"></div>
+    <div class="left-foot"></div>
+    <div class="right-foot"></div>
+    <div class="s">
+      <div class="f"></div>
+      <div class="f1"></div>
+      <div class="f2"></div>
+    </div>
+    <div class="shui"></div>
+  </div>
+  <ul class="right">
+    <li><a href="video.html">video</a></li>
+    <li><a href="music.html">music</a></li>
+    <li><a href="#">xxxx</a></li>
+  </ul>
+  <div class="left-list">
+    <ul>
+      <li>
+        <a href="#">
+            导航
+          <ul>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+          </ul>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            导航
+          <ul>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+          </ul>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            导航
+          <ul>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+          </ul>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            导航
+          <ul>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+          </ul>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            导航
+          <ul>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+          </ul>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+            导航
+          <ul>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+          </ul>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="ball"></div>
+  <div class="ball1"></div>
+  <div class="ball2"></div>
+  <div class="ball3"></div>
+  <div class="ball4"></div>
+  <div class="ball5"></div>
+  <div class="ball6"></div>
+  <div class="ball7"></div>
+</body>
+</html>

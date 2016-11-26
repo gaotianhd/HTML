@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>内容盒子居中外部盒子</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .div1{
+      width: 498px;
+      height: 298px;
+      border: 1px solid red;
+      display: inline-block;
+      position: relative;
+    }
+    .div2{
+      width: 298px;
+      height: 98px;
+      border: 1px solid green;
+      display: inline-block;
+      position: relative;
+      top: -100px;
+      left: -400px;
+    }
+    .div3{
+      width: 498px;
+      height: 298px;
+      border: 1px solid purple;
+      /*overflow: hidden;*/
+    }
+    .div4{
+      width: 298px;
+      height: 98px;
+      border: 1px solid green;
+      margin-left: 100px;
+      margin-top: 100px;
+    }
+    .div5{
+      width: 400px;
+      height: 200px;
+      background-color: yellow;
+      padding-left: 100px;
+      padding-top: 100px;
+
+    }
+    .div6{
+      width: 300px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1" align="center"></div>
+  <div class="div2"></div>
+  <div class="div3">
+    <div class="div4"></div>
+  </div>
+  <div class="div5">
+    <div class="div6"></div>
+  </div>
+</body>
+</html>

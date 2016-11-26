@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>过渡的应用</title>
+  <style media="screen">
+  body {
+    background-color: lightblue;
+  }
+  p {
+    text-align: center;
+  }
+  p span {
+    font-size: 120px;
+    margin-right: 80px;
+    opacity: 0.5;
+    transition: all 3s linear;
+    /*linear ease ease-in ease-out ease-in-out*/
+  }
+  p:hover span {
+    opacity: 1;
+    margin-right: 10px;
+  }
+  </style>
+</head>
+<body>
+  <p>
+    <span>我</span>
+    <span>是</span>
+    <span>中</span>
+    <span>国</span>
+    <span>人</span>
+  </p>
+</body>
+</html>

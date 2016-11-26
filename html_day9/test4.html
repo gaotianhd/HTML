@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>audio应用</title>
+</head>
+<body>
+  <!-- controls 用于显示面板
+       autoplay 自动播放
+       loop 循环播放
+       muted 静音
+      -->
+
+  <audio controls autoplay>
+    <!-- source标签用于指定多个音频 -->
+    <source src="./day09/music/1.mp3" type="mimetype"> <!-- 从第一个资源开始找 找到之后就不再找了 -->
+    <source src="./day09/music/2.ogg">
+  </audio>
+</body>
+</html>

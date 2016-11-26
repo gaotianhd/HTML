@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>透明度</title>
+  <style media="screen">
+    .f{
+      width: 320px;
+      height: 320px;
+      margin: 50px auto;
+      background: url("pic.jpg");
+      position: relative;
+    }
+    /*无法控制透明颜色*/
+    /*.f:hover{
+      opacity: 0.5
+    }*/
+    .f:hover::before{
+      content: "";
+      width: 320px;
+      height: 320px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="f"><img src="pic.jpg" alt="" /></div>
+</body>
+</html>

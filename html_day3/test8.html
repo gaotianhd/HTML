@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>行高的设置</title>
+  <style media="screen">
+    .p1{
+      font-size:20px;
+      /*相对于当前字体大小的百分比，会继承父元素计算后的行高*/
+      /*line-height:150%;*/
+      /*使用像素设置*/
+      /*line-height: 40px;*/
+      /*行高因子，当前字体的1.5倍。继承的是因子而不是父元素的行高。所以用因子比较好*/
+      line-height: 1.5;
+
+    }
+    .p1 span{
+      font-size:30px;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="p1">
+
+    <span>啊哈符合是否就看还是</span><br>
+    <span>啊哈符合是否就看还是</span>
+
+  </p>
+
+</body>
+</html>

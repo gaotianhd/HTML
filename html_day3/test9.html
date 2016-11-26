@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>盒子模型</title>
+  <style media="screen">
+  *{
+    margin:  0;
+    padding: 0;
+  }
+    .div1{
+      width: 300px;
+      height: 100px;
+      /*border-top-width: 1px;
+      border-top-color: red;
+      border-top-style: solid;*/
+
+      /*
+      总和设置border-top:宽度 样式 颜色；这个顺序。下面的一样
+      border-top: 1px solid red;
+      border-left: 1px solid red;
+      border-right: 1px solid red;
+      border-bottom: 1px solid red;*/
+
+      /*可以一起设置 写的顺序是上右下左顺时针方向*/
+      border: 1px solid red;
+      /*这样是对称 写三个也是一样每设置的那条边对称到设置的*/
+      /*border-width: 1px 2px;*/
+      /*这是一起设置颜色*/
+      /*border-color: red green purple blue;*/
+
+      /*padding-top: 50px;
+      padding-bottom: 50px;
+      padding-left: 50px;
+      padding-right: 50px;*/
+
+      padding: 50px 20px;
+
+
+    }
+    .div2{
+      width: 300px;
+      height: 100px;
+      border: 1px solid green;
+      padding: 20px;
+      margin-top: 120px;
+      /*display: inline-block;*/
+
+    }
+  </style>
+</head>
+<body>
+
+
+  <!--
+  盒子的宽度 = width + padding-left + padding-right + border-left + border-right;
+  盒子的高度 = height + padding-top + padding-bottom + border-top + border-buttom;
+ -->
+  <div class="div1"></div>
+  <div class="div2"></div>
+</body>
+</html>

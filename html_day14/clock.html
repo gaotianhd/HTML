@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>钟</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .f{
+      width: 200px;
+      height: 200px;
+      border: 10px solid black;
+      margin: 100px auto;
+      border-radius: 120px;
+      position: relative;
+    }
+    .f div:nth-child(1){
+      width: 5px;
+      height: 200px;
+      background-color: #b3b3b3;
+      position: absolute;
+      left: 50%;
+      margin-left: -2.5px;
+    }
+    .f div:nth-child(2){
+      width: 200px;
+      height: 5px;
+      background-color: #b3b3b3;
+      position: absolute;
+      top: 50%;
+      margin-top: -2.5px;
+    }
+    .f div:nth-child(3){
+      width: 3px;
+      height: 200px;
+      background-color: #b3b3b3;
+      position: absolute;
+      left: 50%;
+      margin-left: -1.5px;
+      transform: rotate(30deg);
+    }
+    .f div:nth-child(4){
+      width: 3px;
+      height: 200px;
+      background-color: #b3b3b3;
+      position: absolute;
+      left: 50%;
+      margin-left: -1.5px;
+      transform: rotate(60deg);
+    }
+    .f div:nth-child(5){
+      width: 3px;
+      height: 200px;
+      background-color: #b3b3b3;
+      position: absolute;
+      left: 50%;
+      margin-left: -1.5px;
+      transform: rotate(120deg);
+    }
+    .f div:nth-child(6){
+      width: 3px;
+      height: 200px;
+      background-color: #b3b3b3;
+      position: absolute;
+      left: 50%;
+      margin-left: -1.5px;
+      transform: rotate(150deg);
+    }
+    .f .nav{
+      width: 160px;
+      height: 160px;
+      /*border: 70px solid white;*/
+      background: white;
+      border-radius: 80px;
+      position: absolute;
+      top:50%;
+      left:50%;
+      margin-top: -80px;
+      margin-left: -80px;
+    }
+    .f .nav1{
+      width: 20px;
+      height: 20px;
+      background: black;
+      border-radius: 10px;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      margin-left: -10px;
+      margin-top: -10px;
+      z-index: 1;
+    }
+    .clockhou{
+      width: 6px;
+      height: 50px;
+      background: black;
+      position: absolute;
+      left: 50%;
+      margin-left: -3px;
+      top: 50px;
+      animation-name: run;
+      animation-duration: 43800s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(60);
+      transform-origin: bottom;
+    }
+    .clockmin{
+      width: 4px;
+      height: 60px;
+      background: black;
+      position: absolute;
+      left: 50%;
+      margin-left: -2px;
+      top: 40px;
+      animation-name: run;
+      animation-duration: 3600s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(60);
+      transform-origin: bottom;
+    }
+    .clocksec{
+      width: 2px;
+      height: 70px;
+      background: red;
+      position: absolute;
+      left: 50%;
+      margin-left: -1px;
+      top: 30px;
+      animation-name: run;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(60);
+      transform-origin: bottom;
+    }
+    @keyframes run{
+      0%{
+        transform: rotate(0);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="f">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="nav"></div>
+    <div class="nav1"></div>
+    <div class="clockhou"></div>
+    <div class="clockmin"></div>
+    <div class="clocksec"></div>
+  </div>
+</body>
+</html>

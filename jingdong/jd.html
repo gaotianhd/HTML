@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  a{
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+  }
+  ul{
+    list-style: none;
+  }
+    .top{
+      width: 100%;
+      height: 27px;
+      background: #f1f1f1;
+      position: relative;
+      /*position: fixed;*/
+    }
+    .top .city a{
+      width: 80px;
+      height: 27px;
+      line-height: 27px;
+      margin-left: 78px;
+      float: left;
+    }
+    .top .city a:hover{
+      background-color: white;
+    }
+    .top ul{
+      position: absolute;
+      top: 0;
+      right: 50px;
+    }
+    .top ul li {
+      float: left;
+      height: 18px;
+      line-height: 18px;
+      margin-top: 5px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .top ul li a{
+      float: left;
+    }
+    .top ul li:hover a{
+      color: red;
+
+    }
+    .top ul .l2 a{
+      color: #c81623;
+    }
+    .top .left{
+      border-left: 1px solid #ddd;
+    }
+    .top span{
+      display: inline-block;
+      width: 15px;
+      height: 8px;
+      background: url("./jd/lx.png") no-repeat 0 -5px;
+    }
+    .top .city:hover span{
+      background: url("./jd/lx.png") no-repeat 0 2px;
+    }
+    .top ul li:hover span{
+      background: url("./jd/lx.png") no-repeat 0 2px;
+    }
+    .topbanner{
+      width: 1210px;
+      height: 80px;
+      margin: 0 auto;
+      /*margin-top: 27px;*/
+      background: url("./jd/topbanner.jpg")
+    }
+    .top-next {
+      width: 1210px;
+      height: 100px;
+      margin: 0 auto;
+    }
+    .top-next .logo{
+      width: 450px;
+      height: 100px;
+      float: left;
+    }
+    .top-next .search{
+      width: 540px;
+      height: 35px;
+      margin-top: 25px;
+      float: left;
+    }
+    .top-next .search .text{
+      display: inline-block;
+      width: 455px;
+      height: 35px;
+      border-color: #b61d1d;
+    }
+    .top-next .search .button{
+      border: none;
+      display: inline-block;
+      width: 80px;
+      height: 39px;
+      background-color: #b61d1d;
+      color: white;
+      cursor: pointer;
+    }
+    .top-next .gouwu{
+      width: 140px;
+      height: 39px;
+      background-color: #f9f9f9;
+      float: right;
+      margin-top: 25px;
+      text-align: center;
+      font-size: 13px;
+      margin-left: 50px;
+      position: relative;
+    }
+    .top-next .gouwu span{
+
+      float: left;
+      width: 28px;
+      height: 35px;
+      background: url("./jd/tel-1.png") no-repeat 10px -78px;
+    }
+    .top-next .gouwu a{
+      margin-left: 10px;
+      float: left;
+      height: 39px;
+      text-align: center;
+      line-height: 39px;
+      font-size: 13px;
+    }
+    .top-next .gouwu:hover{
+          cursor: pointer;
+    }
+    .top-next .gouwu:hover a{
+      color: red;
+    }
+    .top-next .gouwu .num{
+      width: 16px;
+      height: 14px;
+      background: url("./jd/jingdong_r4_c12.png");
+      position: absolute;
+      right: 20px;
+      top: -2px;
+    }
+    .top-next .down{
+      width: 533px;
+      height: 30px;
+      float: left;
+      margin-top: 5px;
+    }
+    .top-next .down ul li a{
+     float: left;
+     line-height: 30px;
+     margin-right: 11px;
+     }
+    .top-next .down .a1{
+      color: #c81623;
+    }
+    .top-next .down ul li:hover a{
+      color: red;
+    }
+    .main{
+      width: 1210px;
+      height: 2000px;
+      margin: 0 auto;
+      /*border: 1px solid red;*/
+      position: relative;
+    }
+    .main .up-list{
+      float: left;
+    }
+    .main .up-list dl a{
+      margin-left: 10px;
+      color: white;
+    }
+    .main .up-list dd{
+      width: 210px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      background: #c81623;
+    }
+    .main .up-list span{
+      float: right;
+      margin-right: 10px;
+      color: white;
+    }
+    .main .up-list a:hover{
+      color: red;
+    }
+    .line{
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      border-bottom: 2px solid #b1191a;
+
+    }
+    .line .line-list{
+      width: 1210px;
+      height: 45px;
+      margin: 0 auto;
+    }
+    .line .line-list dt{
+      width: 210px;
+      height: 45px;
+      background-color: #b1191a;
+      line-height: 45px;
+    }
+    .line .line-list dt a{
+      display: inline-block;
+      width: 210px;
+      height: 45px;
+      line-height: 45px;
+      color: white;
+      font-size: 17px;
+      margin-left: 10px;
+    }
+    .line .line-list dt,
+    .line .line-list dd{
+      float: left;
+    }
+    .line .line-list dd a{
+      display: inline-block;
+      width: 98px;
+      height: 45px;
+      text-align: center;
+      line-height: 45px;
+    }
+    .line .line-list dd a{
+      font-size: 17px;
+    }
+    .line .line-list dt:hover a,
+    .line .line-list dd:hover a{
+      color: red;
+    }
+    .main .main-img {
+      width: 730px;
+      height: 450px;
+      float: left;
+      background: url("./jd/main-img.jpg") no-repeat 12px 10px;
+    }
+    .main .main-other{
+      width: 248px;
+      height: 160px;
+      float: right;
+      border: 1px solid #e4e4e4;
+      position: absolute;
+      right: 10px;
+      top: 12px;
+    }
+    .main .main-other dl{
+      margin-left: 10px;
+    }
+    .main .main-other dt {
+      width: 248px;
+      height: 33px;
+      line-height: 33px;
+      border-bottom: 1px dotted #e4e4e4;
+    }
+    .main .main-other dt .s1{
+      font-size: 17px;
+    }
+    .main .main-other dt a{
+      position: absolute;
+      right: 10px;
+      display: inline-block;
+      height: 33px;
+      line-height: 33px;
+      font-size: 14px;
+    }
+    .main .main-other dd{
+      font-size: 13px;
+      width: 248px;
+      height: 25px;
+      line-height: 25px;
+    }
+    .main .main-other a:hover{
+      color: red;
+    }
+    .main .main-pi{
+      width: 248px;
+      height: 210px;
+      border: 1px solid #e4e4e4;
+      float: right;
+      position: absolute;
+      right: 10px;
+      top: 172px;
+    }
+    .main .main-pi div{
+      width: 60px;
+      height: 70px;
+      border: 1px solid #e4e4e4;
+      float: left;
+      margin-left: -1px;
+      margin-top: -1px;
+      padding-right: 1px;
+    }
+    .main .main-pi span{
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 10px 15px;
+    }
+    .pi-1{
+      background: url("./jd/service.png") no-repeat ;
+    }
+    .pi-2{
+      background: url("./jd/service.png") no-repeat 0 -25px;
+    }
+    .pi-3{
+      background: url("./jd/service.png") no-repeat 0 -50px;
+    }
+    .pi-4{
+      background: url("./jd/service.png") no-repeat 0 -75px;
+    }
+    .pi-5{
+      background: url("./jd/service.png") no-repeat 0 -100px;
+    }
+    .pi-6{
+      background: url("./jd/service.png") no-repeat 0 -125px;
+    }
+    .pi-7{
+      background: url("./jd/service.png") no-repeat 0 -150px;
+    }
+    .pi-8{
+      background: url("./jd/service.png") no-repeat 0 -175px;
+    }
+    .pi-9{
+      background: url("./jd/service.png") no-repeat 0 -250px;
+    }
+    .pi-10{
+      background: url("./jd/service.png") no-repeat 0 -200px;
+    }
+    .pi-11{
+      background: url("./jd/service.png") no-repeat 0 -275px;
+    }
+    .pi-12{
+      background: url("./jd/service.png") no-repeat 0 -225px;
+    }
+    .main .main-pi a{
+      display: inline-block;
+      width: 60px;
+      text-align: center;
+    }
+    .main .main-pi a:hover{
+      color: red;
+    }
+    .main .main-down{
+      width: 250px;
+      height: 66px;
+      background: url("./jd/news-bottom.jpg");
+      float: right;
+      position: absolute;
+      right: 10px;
+      top: 383px;
+    }
+    .low{
+      width: 100%;
+      height: 94px;
+      background-color: #f5f5f5;
+    }
+    .low .low-pi{
+      width: 1210px;
+      height: 94px;
+      margin: 0 auto;
+    }
+    .low .low-pi div{
+      width: 220px;
+      height: 54px;
+      float: left;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 60px;
+    }
+    .low .low-pi .low-1{
+      background: url("./jd/service_items_1.png") no-repeat;
+    }
+    .low .low-pi .low-2{
+      background: url("./jd/service_items_2.png") no-repeat;
+    }
+    .low .low-pi .low-3{
+      background: url("./jd/service_items_3.png") no-repeat;
+    }
+    .low .low-pi .low-4{
+      background: url("./jd/service_items_4.png") no-repeat;
+    }
+    .low-down {
+      width: 1210px;
+      height: 200px;
+      margin: 0 auto;
+      border-bottom: 1px solid #e5e5e5;
+      position: relative;
+    }
+    .low-down dl{
+      float: left;
+      margin-right: 138px;
+    }
+    .low-down .dl-6{
+      margin-right: 0;
+    }
+    .low-down dl dt{
+      font-size: 18px;
+      color: #666;
+      margin-top: 25px;
+      margin-bottom: 20px;
+    }
+    .low-down dl dd{
+      margin-bottom: 3px;
+    }
+    .low-down dl dd a:hover{
+      color: red;
+    }
+    .map {
+      float: left;
+      width: 200px;
+      height: 170px;
+      background: url("./jd/map.png") no-repeat 0 -130px;
+      position: absolute;
+      top: 25px;
+      right: 10px;
+      color: #666;
+      font-size: 13px;
+    }
+    .map h3{
+     margin-top: 0;
+     margin-bottom: 15px;
+     }
+    .map a{
+      display: inline-block;
+      margin-top: 10px;
+      position: absolute;
+      right: 10px;
+    }
+    .map a:hover{
+      color: red;
+    }
+    .low-other{
+      width: 1000px;
+      height: 195px;
+      margin: 0 auto;
+    }
+    .low-other ul{
+      margin: 0 auto;
+      color: #666;
+    }
+    .low-other ul li{
+      height: 15px;
+      font-size: 13px;
+      float: left;
+      margin-top: 30px;
+      line-height: 15px;
+      border-right: 1px solid #666;
+    }
+    .low-other .ul-1 li{
+      padding: 0 11px;
+    }
+    .low-other .ul-1 a:hover{
+      color: red;
+    }
+    .low-other .ul-2 li{
+      margin-top: 10px;
+    }
+    .low-other .ul-3 li{
+      margin-top: 10px;
+    }
+    .low-other .l-1{
+      border: none;
+      margin-right: 61px;
+    }
+    .low-other .div{
+      width: 20px;
+      height: 20px;
+      float: left;
+      background: url("./jd/link-icon.png");
+    }
+    .div2{
+      width: 700px;
+      float: left;
+      margin: 0 auto;
+      font-size: 13px;
+      color: #666;
+    }
+    .low-other .div2 p{
+      text-align: center;
+    }
+    .div3{
+      width: 650px;
+      height: 32px;
+      margin:  0 auto;
+      float: left;
+    }
+    .div3 div{
+      width: 103px;
+      height: 32px;
+      float: left;
+      margin-left: 15px;
+    }
+    .div3 .p-1{
+      background: url("./jd/auth-1.png");
+      margin-left: 60px;
+    }
+    .div3 .p-2{
+      background: url("./jd/auth-2.png");
+    }
+    .div3 .p-3{
+      background: url("./jd/auth-3.jpg");
+    }
+    .div3 .p-4{
+      background: url("./jd/auth-4.png");
+    }
+    .div3 .p-5{
+      background: url("./jd/auth-5.jpg");
+    }
+    .div3 .p-6{
+      background: url("./jd/auth-6.jpg");
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="city"><a href="#">送至：北京<span></span></a></div>
+    <ul>
+      <li class="l1"><a href="#">你好，请登录</a></li>
+      <li class="l2"><a href="#">免费注册</a></li>
+      <li class="left"><a href="#">我的订单</a></li>
+      <li class="left"><a href="#">我的京东<span></span></a></li>
+      <li class="left"><a href="#">京东会员</a></li>
+      <li class="left"><a href="#">企业采购</a></li>
+      <li class="left"><a href="#"><img src="./jd/tel.png" alt="" />手机京东<span></span></a></li>
+      <li class="left"><a href="#">关注京东<span></span></a></li>
+      <li class="left"><a href="#">客户服务<span></span></a></li>
+      <li class="left"><a href="#">网站导航<span></span></a></li>
+    </ul>
+  </div>
+  <div class="topbanner"></div>
+  <div class="top-next">
+    <div class="logo"><img src="./jd/jd-logo.png" alt="" /><img src="./jd/dong.gif" alt="" /></div>
+    <div class="search"><input class="text" type="text"><input class="button" type="button" value="搜索"></div>
+    <div class="gouwu"><span></span><a href="#">我的购物车&nbsp;&nbsp;></a><div class="num"></div></div>
+    <div class="down">
+      <ul>
+      <li><a class="a1" href="#">99元3件</a></li>
+      <li><a href="#">领免息劵</a></li>
+      <li><a href="#">1元抢粽</a></li>
+      <li><a href="#">荣耀V8</a></li>
+      <li><a href="#">决胜618</a></li>
+      <li><a href="#">蚊帐</a></li>
+      <li><a href="#">运动短裤</a></li>
+      <li><a href="#">免费试用</a></li>
+      <li><a href="#">实木沙发</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="line">
+    <div class="line-list">
+    <dl>
+     <dt><a href="#">全部商品分类</a></dt>
+     <dd><a href="#">服装城</a></dd>
+     <dd><a href="#">美妆馆</a></dd>
+     <dd><a href="#">超市</a></dd>
+     <dd><a href="#">全球购</a></dd>
+     <dd><a href="#">闪购</a></dd>
+     <dd><a href="#">团购</a></dd>
+     <dd><a href="#">拍卖</a></dd>
+     <dd><a href="#">金融</a></dd>
+   </dl>
+   </div>
+  </div>
+  <div class="main">
+    <div class="up-list">
+      <dl>
+        <dd><a href="#">家用电器</a><span>></span></dd>
+        <dd><a href="#">手机、数码、京东通信</a><span>></span></dd>
+        <dd><a href="#">电脑、办公</a><span>></span></dd>
+        <dd><a href="#">家居、家具、家装、厨具</a><span>></span></dd>
+        <dd><a href="#">男装、女装、童装、内衣</a><span>></span></dd>
+        <dd><a href="#">个户化妆、清洁用品、宠物</a><span>></span></dd>
+        <dd><a href="#">鞋靴、精包、珠宝、奢侈品</a><span>></span></dd>
+        <dd><a href="#">户外运动、钟表</a><span>></span></dd>
+        <dd><a href="#">汽车、汽车用品</a><span>></span></dd>
+        <dd><a href="#">母婴、玩具乐器</a><span>></span></dd>
+        <dd><a href="#">食品、酒类、生鲜、特产</a><span>></span></dd>
+        <dd><a href="#">医药保健</a><span>></span></dd>
+        <dd><a href="#">图书、音像、电子书</a><span>></span></dd>
+        <dd><a href="#">彩票、旅行、充值、票务</a><span>></span></dd>
+        <dd><a href="#">理财、众筹、白条、保险</a><span>></span></dd>
+      </dl>
+    </div>
+    <div class="main-img"></div>
+    <div class="main-other">
+      <dl>
+        <dt><span class="s1">京东快报</span><a href="#">更多&nbsp;></a></dt>
+        <dd><a href="#"><strong>[特惠]</strong>空调品牌大战72小时</a></dd>
+        <dd><a href="#"><strong>[公告]</strong>CES开幕体验智能京东智慧生活</a></dd>
+        <dd><a href="#"><strong>[特惠]</strong>潮配99元3件，单反低至1699！</a></dd>
+        <dd><a href="#"><strong>[公告]</strong>大连柳州开仓 211限时达扩大</a></dd>
+        <dd><a href="#"><strong>[特惠]</strong>美酒嘉年华 进口红酒1元购</a></dd>
+      </dl>
+    </div>
+    <div class="main-pi">
+      <div><span class="pi-1"></span><a href="#">话费</a></div>
+      <div><span class="pi-2"></span><a href="#">机票</a></div>
+      <div><span class="pi-3"></span><a href="#">电影票</a></div>
+      <div><span class="pi-4"></span><a href="#">游戏</a></div>
+      <div><span class="pi-5"></span><a href="#">彩票</a></div>
+      <div><span class="pi-6"></span><a href="#">团购</a></div>
+      <div><span class="pi-7"></span><a href="#">酒店</a></div>
+      <div><span class="pi-8"></span><a href="#">火车票</a></div>
+      <div><span class="pi-9"></span><a href="#">众筹</a></div>
+      <div><span class="pi-10"></span><a href="#">理财</a></div>
+      <div><span class="pi-11"></span><a href="#">礼品卡</a></div>
+      <div><span class="pi-12"></span><a href="#">白条</a></div>
+    </div>
+    <div class="main-down"></div>
+  </div>
+  <div class="low">
+    <div class="low-pi">
+      <div class="low-1"></div>
+      <div class="low-2"></div>
+      <div class="low-3"></div>
+      <div class="low-4"></div>
+    </div>
+  </div>
+  <div class="low-down">
+    <dl>
+      <dt>购物指南</dt>
+      <dd><a href="#">购物流程</a></dd>
+      <dd><a href="#">购物流程</a></dd>
+      <dd><a href="#">购物流程</a></dd>
+      <dd><a href="#">购物流程</a></dd>
+      <dd><a href="#">购物流程</a></dd>
+      <dd><a href="#">购物流程</a></dd>
+    </dl>
+    <dl>
+      <dt>配送方式</dt>
+      <dd><a href="#">上门自提</a></dd>
+      <dd><a href="#">上门自提</a></dd>
+      <dd><a href="#">上门自提</a></dd>
+      <dd><a href="#">上门自提</a></dd>
+      <dd><a href="#">上门自提</a></dd>
+    </dl>
+    <dl>
+      <dt>支付方式</dt>
+      <dd><a href="#">货到付款</a></dd>
+      <dd><a href="#">货到付款</a></dd>
+      <dd><a href="#">货到付款</a></dd>
+      <dd><a href="#">货到付款</a></dd>
+      <dd><a href="#">货到付款</a></dd>
+    </dl>
+    <dl>
+      <dt>售后服务</dt>
+      <dd><a href="#">售后政策</a></dd>
+      <dd><a href="#">售后政策</a></dd>
+      <dd><a href="#">售后政策</a></dd>
+      <dd><a href="#">售后政策</a></dd>
+      <dd><a href="#">售后政策</a></dd>
+    </dl>
+    <dl class="dl-6">
+      <dt>特色服务</dt>
+      <dd><a href="#">夺宝岛</a></dd>
+      <dd><a href="#">夺宝岛</a></dd>
+      <dd><a href="#">夺宝岛</a></dd>
+      <dd><a href="#">夺宝岛</a></dd>
+      <dd><a href="#">夺宝岛</a></dd>
+      <dd><a href="#">夺宝岛</a></dd>
+    </dl>
+    <div class="map">
+      <h3>京东自营覆盖区县</h3>
+      京东已向全国1603个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。<br>
+      <a href="#">查看详情&nbsp;></a>
+    </div>
+  </div>
+  <div class="low-other">
+    <ul class="ul-1">
+      <li><a href="#">关于我们</a></li>
+      <li><a href="#">联系我们</a></li>
+      <li><a href="#">商家入驻</a></li>
+      <li><a href="#">营销中心</a></li>
+      <li><a href="#">手机京东</a></li>
+      <li><a href="#">友情链接</a></li>
+      <li><a href="#">销售联盟</a></li>
+      <li><a href="#">京东社区</a></li>
+      <li><a href="#">京东公益</a></li>
+      <li><a href="#">English Site</a></li>
+      <li class="l-1"><a href="#">Contact Us</a></li>
+    </ul><br>
+    <ul class="ul-2">
+      <li><div class="div"></div>京公网安备110000002000088</li>
+      <li>京ICP证070359号</li>
+      <li>互联网药品信息服务资格证编号(京)-经营型-2014-0008</li>
+      <li class="l-1">新出发京零 字第大120007号</li>
+    </ul>
+    <ul class="ul-3">
+      <li>音像制品经营许可证苏宿批005号</li>
+      <li>出版物经营许可证编号新出发(苏)批字第N-012号</li>
+      <li class="l-1">互联网出版许可证编号新出网证(京)字150号</li>
+    </ul>
+    <div class="div2">
+     <p>网络文化经营许可证京文[2014]2148-348号 违法和不良举报电话：400000000 xxxxxxxxxxx</p>
+     <p>京东旗下网站：京东钱包</p>
+    </div>
+    <div class="div3">
+      <div class="p-1"></div>
+      <div class="p-2"></div>
+      <div class="p-3"></div>
+      <div class="p-4"></div>
+      <div class="p-5"></div>
+    </div>
+  </div>
+</body>
+</html>

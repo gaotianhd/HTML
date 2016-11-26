@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css继承</title>
+  <style media="screen">
+  /*与文本相关的都可以继承*/
+    .div1{
+      font-size:30px;
+      color: red;
+    }
+    .div2{
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="div1">
+    div元素
+    <p>p元素</p>
+  </div>
+  <!-- 高度不可以被继承，宽度可以被继承 -->
+  <div class="div2">
+    div
+    <div class="div2-1">
+      div2-1
+    </div>
+  </div>
+</body>
+</html>

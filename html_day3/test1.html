@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css特殊继承</title>
+  <style media="screen">
+  /*继承修改不了a标签颜色*/
+    .p1{
+      color:green;
+    }
+    /*直接修改*/
+    .p1 a{
+      color:green;
+    }
+    .p2{
+      font-size:50px;
+    }
+    .p2 h2{
+      font-size:10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- a标签的颜色不会继承 -->
+  <p class="p1">
+    p颜色
+    <a href="https://www.baidu.com">百度</a>
+  </p>
+  <!-- h标签的字体大小受继承影响非常小 -->
+  <!-- p标签不能嵌套h标签，div可以就是一个容器 -->
+  <div class="p2">
+    p2字体大小
+    <h2> h2字体大小</h2>
+  </div>
+</body>
+</html>

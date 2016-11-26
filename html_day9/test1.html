@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>智能表单一</title>
+</head>
+<body>
+  <form class="" action="#" method="get">
+    <!-- 使用label包含input值点击label可以让input获得焦点 -->
+    <label>邮箱：<input type="email" name="name" value=""></label><br><br>
+    <!-- 邮箱：<input type="email" name="name" value=""> -->
+
+    <!-- 第二种label使用方法 -->
+    <label for="pw-id">密码：</label>
+    <input id="pw-id" type="password" name="name" value=""><br><br>
+
+    <label>输入url：<input type="url" name="name" value=""></label><br><br>
+
+    <label>输入数字：<input type="number" step="1" min="18" max="65"></label><br><br>
+
+    <label>成绩： <input type="range" name="name" min="10000" max="25000" value="12000"></label><br><br>
+
+    <label>输入date： <input type="date" name="date"></label><br><br>
+    <label>输入month： <input type="month" name="month"></label><br><br>
+    <label>输入week： <input type="week" name="week"></label><br><br>
+    <label>输入datetime： <input type="datetime" name="datetime"></label><br><br>
+    <label>输入datetime-local： <input type="datetime-local" name="datetime-local"></label><br><br>
+    <input type="submit" value="提交">
+  </form>
+</body>
+</html>

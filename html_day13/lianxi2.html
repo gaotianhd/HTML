@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>火箭</title>
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+    body{
+      width: 100%;
+      height: 100%;
+      background: lightblue;
+    }
+    .f{
+      width: 101px;
+      height: 190px;
+      position: absolute;
+      top: 500px;
+      transform: rotate(45deg) translate(40px,205px);
+      transition: all 0.5s linear;
+    }
+    html:hover .f{
+      transform: translate(500px,-500px) rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="f"><img src="./day13/image/rocket.png" alt="" /></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>浮动</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      height: 100px;
+    }
+    .box1{
+      width: 200px;
+      background-color: red;
+      float: left;
+    }
+    .box2{
+      width: 300px;
+      background-color: yellow;
+      float: left;
+    }
+    .box3{
+      width: 400px;
+      background-color: blue;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- 当一个元素设定了float就变成了行内块元素 -->
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <p>默认的块级元素的display</p>
+</body>
+</html>

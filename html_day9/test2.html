@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>智能表单二</title>
+</head>
+<body>
+  <!-- novalidate可以关闭智能表单 -->
+  <!-- autocomplete可以记住之前的输入 -->
+  <form id="form-1" action="#" method="get" autocomplete="on">
+    <!-- autofocus自动获得焦点 -->
+    姓名： <input type="text" name="name" autofocus><br><br>
+    email: <input type="email" name="email" autofocus><br><br>
+
+
+
+    <input type="submit" name="submit" value="提交">
+    <!-- formaction属性可以更改数据的提交 -->
+    <input type="submit" name="submit" value="覆盖之前的提交" formaction="./test1.html">
+  </form>
+  <!-- 表单控件通过form属性指定对应的form表单id对应值，就可以认为是在该表单中 -->
+  <input type="text" name="other" value="" form="form-1">
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>放大缩小</title>
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+    .f{
+      width: 100%;
+      height: 50px;
+      background: #a1a3a6;
+      text-align: center;
+      line-height: 50px;
+      font-size: 30px;
+      float: left;
+    }
+    .nav{
+      width: 131px;
+      height: 130px;
+      border-radius: 65px;
+      /*border: 1px solid red;*/
+      float: left;
+      margin-left: 150px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      transition: all 1s linear;
+    }
+    .f1{
+      background: url("./day13/image/share1.png");
+    }
+    .f2{
+      background: url("./day13/image/share2.png");
+    }
+    .f3{
+      background: url("./day13/image/share3.png");
+    }
+    .f4{
+      background: url("./day13/image/share4.png");
+    }
+    .f5{
+      background: url("./day13/image/share5.png");
+    }
+    .f6{
+      background: url("./day13/image/share6.png");
+    }
+    div[class^="f"]:hover{
+      transform: rotate(360deg) scale(1.2,1.2);
+    }
+    .s{
+      width: 100%;
+      height: 50px;
+      background: #a1a3a6;
+      text-align: center;
+      line-height: 50px;
+      font-size: 30px;
+      float: left;
+    }
+    .s1{
+      background: url("./day13/image/share7.png");
+    }
+    .s2{
+      background: url("./day13/image/share8.png");
+    }
+    .s3{
+      background: url("./day13/image/share9.png");
+    }
+    .s4{
+      background: url("./day13/image/share10.png");
+    }
+    .s5{
+      background: url("./day13/image/share11.png");
+    }
+    .s6{
+      background: url("./day13/image/share12.png");
+    }
+    div[class^="s"]:hover{
+      transform: rotate(-360deg) scale(0.7,0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="f">顺时针放大</div>
+  <div class="f1 nav"></div>
+  <div class="f2 nav"></div>
+  <div class="f3 nav"></div>
+  <div class="f4 nav"></div>
+  <div class="f5 nav"></div>
+  <div class="f6 nav"></div>
+  <div class="s">逆时针缩小</div>
+  <div class="s1 nav"></div>
+  <div class="s2 nav"></div>
+  <div class="s3 nav"></div>
+  <div class="s4 nav"></div>
+  <div class="s5 nav"></div>
+  <div class="s6 nav"></div>
+</body>
+</html>

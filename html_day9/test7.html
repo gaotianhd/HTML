@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>相邻选择器</title>
+  <style media="screen">
+  /*表示div后面的第一个p应用*/
+  /*后代，或者子等选择器的寻找方法，从右到左*/
+    div + p{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>机收费开始点放开就是的很舒服</p>
+    <p>机收费开始点放开就是的很舒服</p>
+    <p>机收费开始点放开就是的很舒服</p>
+    <div>收款未货款基本吧</div>
+    <p>机收费开始点放开就是的很舒服</p>
+    <p>机收费开始点放开就是的很舒服</p>
+    <div>收款未货款基本吧</div>
+  </div>
+</body>
+</html>

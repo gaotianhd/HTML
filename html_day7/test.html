@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>背景固定</title>
+  <style media="screen">
+  body{
+    /*position: relative;*/
+    margin: 0 auto;
+  }
+  .top{
+    width: 1351px;
+    height: 43px;
+    background: url("./position-image/r1.jpg");
+    position: fixed;
+    top: 0;
+    left: 300px;
+  }
+    .div1{
+      width: 998px;
+      height: 1677px;
+      background: url("./position-image/box.png");
+      margin: 0 auto;
+      margin-top: 43px;
+    }
+    .div2{
+      width: 120px;
+      height: 288px;
+      background: url("./position-image/r2_c1.png");
+      position: fixed;
+      top: 100px;
+      left: 20px;
+    }
+    .div3{
+      width: 120px;
+      height: 288px;
+      background: url("./position-image/r2_c2.png");
+      position: fixed;
+      top: 100px;
+      right: 20px;
+    }
+    .div4 a{
+      width: 50px;
+      height: 50px;
+      background: url("./position-image/top.png");
+      position: fixed;
+      bottom: 100px;
+      right: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top"></div>
+  <div class="div1"></div>
+  <div class="div2"></div>
+  <div class="div3"></div>
+  <div class="div4"><a href="#"></a></div>
+</body>
+</html>

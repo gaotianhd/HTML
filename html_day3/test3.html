@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css优先级</title>
+  <style media="screen">
+    div p{
+      color: red;
+    }
+    .div1 p {
+      color: blue;
+    }
+    #did{
+      color:yellow;
+    }
+    p{
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+  <!-- id>class>标签>继承>浏览器默认属性 ，当它们都作用于同一元素。 -->
+  <div id="did" class="div1">
+    <p>div中的p元素</p>
+  </div>
+</body>
+</html>

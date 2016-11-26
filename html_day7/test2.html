@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>小米换图片</title>
+  <script type="text/javascript">
+
+    function f1(){
+      var f1 = document.getElementById("box1");
+      f1.style.backgroundImage = "url(./xiaomi-image/xiaomi.jpg)";
+    }
+    function f2(){
+      var f2 = document.getElementById("box1");
+      f2.style.backgroundImage = "url(./xiaomi-image/banner.jpg)";
+    }
+    function f3(){
+      var f3 = document.getElementById("box1");
+      f3.style.backgroundImage = "url(./xiaomi-image/xiaomi2.jpg)";
+    }
+    function f4(){
+      var f4 = document.getElementById("box1");
+      f4.style.backgroundImage = "url(./xiaomi-image/xiaomi1.jpg)";
+    }
+    var array = new Array();
+    array[0]="url(./xiaomi-image/xiaomi.jpg)";
+    array[1]="url(./xiaomi-image/banner.jpg)";
+    array[2]="url(./xiaomi-image/xiaomi2.jpg)";
+    array[3]="url(./xiaomi-image/xiaomi1.jpg)";
+    var i = 0;
+    function picture(){
+      var f = document.getElementById("box1");
+      f.style.backgroundImage = array[i];
+      i++;
+      if(i==4){
+        i = 0;
+      }
+
+    }
+    setInterval("picture()",5000);
+  </script>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      width: 1226px;
+      height: 460px;
+      background: url("./xiaomi-image/xiaomi.jpg");
+      margin: 10px auto;
+      position: relative;
+    }
+    .left a,.right a{
+      width: 41px;
+      height: 69px;
+      position: absolute;
+      top: 50%;
+      margin-top: -34px;
+      cursor: pointer;
+    }
+    .left a{
+      background: url("./xiaomi-image/arr_r1_c5.png");
+      left: 280px;
+    }
+    .left a:hover{
+      background: url("./xiaomi-image/arrow_r1_c1.png");
+    }
+    .right a{
+      background: url("./xiaomi-image/arr_r1_c7.png");
+      right: 10px;
+    }
+    .right a:hover{
+      background: url("./xiaomi-image/arrow_r1_c3.png");
+    }
+    ul{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+    }
+    .sum{
+      width: 120px;
+      height: 20px;
+      position: absolute;
+      bottom: 20px;
+      left:50%;
+      margin-left: -60px;
+    }
+    .sum li{
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 10px;
+      float: left;
+    }
+    .sum li:hover input{
+      color: blue;
+    }
+    .sum li input{
+      width: 20px;
+      height: 20px;
+      color: black;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="box1" class="box">
+    <div class="left"><a href="#"></a></div>
+    <div class="right"><a href="#"></a></div>
+    <div class="sum">
+      <ul>
+        <li><input type="button" name="name" value="1" onclick="f1()"></li>
+        <li><input type="button" name="name" value="2" onclick="f2()"></li>
+        <li><input type="button" name="name" value="3" onclick="f3()"></li>
+        <li><input type="button" name="name" value="4" onclick="f4()"></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>天气</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .nav{
+      width: 1100px;
+      height: 190px;
+      margin: 100px auto;
+      /*border: 1px solid red;*/
+    }
+    ul{
+      list-style: none;
+    }
+    ul li{
+      width: 155px;
+      height: 190px;
+      float: left;
+      position: relative;
+      /*border: 1px solid red;*/
+    }
+    ul li:nth-child(1){
+      background: #00bbff;
+    }
+    .sun{
+      width: 70px;
+      height: 70px;
+      border-radius: 35px;
+      background: #ffee44;
+      position: absolute;
+      top: 50%;
+      margin-top: -35px;
+      left: 50%;
+      margin-left: -35px;
+    }
+    .sun::before{
+      content: "";
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      background: #ffee44;
+      opacity: 0.3;
+      animation: sun1 2s linear infinite;
+    }
+    .first{
+      width: 15px;
+      height: 110px;
+      /*border-top: 20px solid white;
+      border-bottom: 20px solid white;*/
+      background: linear-gradient( to top, white 10%,#ffee44 25%, yellow 50%, yellow 75%,#ffee44 90%,white) repeat;
+      opacity: 0.2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -7.5px;
+      margin-top: -55px;
+      animation: sun 7s linear infinite;
+    }
+    .second{
+      width: 110px;
+      height: 15px;
+      /*border-left: 20px solid white;
+      border-right: 20px solid white;*/
+      background: linear-gradient( to right, white 10%,#ffee44 25%, yellow 50%, yellow 75%,#ffee44 90%,white) repeat;
+      opacity: 0.2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -55px;
+      margin-top: -7.5px;
+      animation: sun 7s linear infinite;
+    }
+    @keyframes sun {
+      0%{
+
+      }
+      100%{
+        transform: rotateZ(360deg);
+      }
+    }
+    ul li:nth-child(2){
+      background: #2eb5e5;
+    }
+    .cloud-1{
+      width: 110px;
+      height: 90px;
+      position: absolute;
+      left: 50%;
+      margin-left: -55px;
+      top: 30px;
+      animation: cloud 3s linear infinite alternate-reverse;
+    }
+    @keyframes cloud {
+      0%{
+        top: 15px;
+      }
+      100%{
+        top: 30px;
+      }
+    }
+    .cloud-1 .cloud1{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: white;
+      position: absolute;
+      left: 8px;
+      top: 45px;
+    }
+    .cloud-1 .cloud2{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: white;
+      position: absolute;
+      left: 25px;
+      top: 22px;
+    }
+    .cloud-1 .cloud3{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: white;
+      position: absolute;
+      left: 30px;
+      top: 48px;
+    }
+    .cloud-1 .cloud4{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: white;
+      position: absolute;
+      top: 32px;
+      right: 24px;
+    }
+    .cloud-1 .cloud5{
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background: white;
+      position: absolute;
+      top: 45px;
+      right: 10px;
+    }
+    .cloud-1 .cloud6{
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background: white;
+      position: absolute;
+      top: 63px;
+      right: 32px;
+    }
+    .ying{
+      width: 90px;
+      height: 10px;
+      background: #bdbdbd;
+      border-radius: 45px/5px;
+      position: absolute;
+      left: 50%;
+      margin-left: -45px;
+      bottom: 20px;
+      opacity: 0.5;
+      animation: ying 3s linear infinite alternate-reverse;
+    }
+    @keyframes ying {
+      0%{
+        opacity: 0.2;
+      }
+      100%{
+        opacity: 0.7;
+      }
+    }
+    ul li:nth-child(3){
+      background: #e6e6e6;
+    }
+    .cloud-2{
+      width: 110px;
+      height: 90px;
+      position: absolute;
+      left: 50%;
+      margin-left: -55px;
+      top: 30px;
+      animation: cloud 3s linear infinite alternate-reverse;
+    }
+    .cloud-2 .cloud1{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #ccc;
+      position: absolute;
+      left: 8px;
+      top: 45px;
+    }
+    .cloud-2 .cloud2{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #ccc;
+      position: absolute;
+      left: 25px;
+      top: 22px;
+    }
+    .cloud-2 .cloud3{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #ccc;
+      position: absolute;
+      left: 30px;
+      top: 48px;
+    }
+    .cloud-2 .cloud4{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #ccc;
+      position: absolute;
+      top: 32px;
+      right: 24px;
+    }
+    .cloud-2 .cloud5{
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background: #ccc;
+      position: absolute;
+      top: 45px;
+      right: 10px;
+    }
+    .cloud-2 .cloud6{
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background: #ccc;
+      position: absolute;
+      top: 63px;
+      right: 32px;
+    }
+     ul li:nth-child(3) div[class^="rain"]{
+      width: 2px;
+      height: 3px;
+      background: #a2a2a2;
+      position: absolute;
+      top: 90px;
+     }
+    .rain1{
+      left: 40px;
+      animation: down 1s linear infinite;
+    }
+    .rain2{
+      left: 50px;
+      animation: down 2s linear infinite;
+    }
+    .rain3{
+      left: 60px;
+      animation: down 1.5s linear infinite;
+    }
+    .rain4{
+      left: 70px;
+      animation: down 2.2s linear infinite;
+    }
+    .rain5{
+      left: 75px;
+      animation: down 0.5s linear infinite;
+    }
+    .rain6{
+      left: 80px;
+      animation: down 1s linear infinite;
+    }
+    .rain7{
+      left: 85px;
+      animation: down 2.5s linear infinite;
+    }
+    .rain8{
+      left: 90px;
+      animation: down 2.2s linear infinite;
+      left: 100px;
+    }
+    .rain10{
+      left: 110px;
+      animation: down 1s linear infinite;
+    }
+    @keyframes down {
+      0%{
+        opacity: 0;
+      }
+      50%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+        top: 160px;
+      }
+    }
+    ul li:nth-child(4){
+      background: #f3d166;
+    }
+    .caihong{
+      width: 180px;
+      height: 180px;
+      border-radius: 90px;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      margin-left: -90px;
+      animation: caihong 4s linear infinite alternate-reverse;
+    }
+    /*.caihong div{
+      box-shadow: 0px -5px 10px white;
+    }*/
+    @keyframes caihong {
+      0%{
+        transform: rotateZ(-8deg);
+      }
+      100%{
+        transform: rotateZ(8deg);
+      }
+    }
+    .caihong1{
+      width: 170px;
+      height: 170px;
+      border-radius: 85px;
+      position: absolute;
+      top: 50%;
+      margin-top: -85px;
+      left: 50%;
+      margin-left: -85px;
+      border-top: 5px solid purple;
+      border-left: 5px solid rgba(255, 0, 0, 0);
+      border-right: 5px solid rgba(255, 0, 0, 0);
+      border-bottom: 5px solid rgba(255, 0, 0, 0)
+    }
+    .caihong2{
+      width: 160px;
+      height: 160px;
+      border-radius: 80px;
+      position: absolute;
+      top: 50%;
+      margin-top: -80px;
+      left: 50%;
+      margin-left: -80px;
+      border-top: 5px solid blue;
+      border-left: 5px solid rgba(255, 0, 0, 0);
+      border-right: 5px solid rgba(255, 0, 0, 0);
+      border-bottom: 5px solid rgba(255, 0, 0, 0);
+    }
+    .caihong3{
+      width: 150px;
+      height: 150px;
+      border-radius: 75px;
+      position: absolute;
+      top: 50%;
+      margin-top: -75px;
+      left: 50%;
+      margin-left: -75px;
+      border-top: 5px solid cyan;
+      border-left: 5px solid rgba(255, 0, 0, 0);
+      border-right: 5px solid rgba(255, 0, 0, 0);
+      border-bottom: 5px solid rgba(255, 0, 0, 0);
+    }
+    .caihong4{
+      width: 140px;
+      height: 140px;
+      border-radius: 70px;
+      position: absolute;
+      top: 50%;
+      margin-top: -70px;
+      left: 50%;
+      margin-left: -70px;
+      border-top: 5px solid green;
+      border-left: 5px solid rgba(255, 0, 0, 0);
+      border-right: 5px solid rgba(255, 0, 0, 0);
+      border-bottom: 5px solid rgba(255, 0, 0, 0);
+    }
+    .caihong5{
+      width: 130px;
+      height: 130px;
+      border-radius: 65px;
+      position: absolute;
+      top: 50%;
+      margin-top: -65px;
+      left: 50%;
+      margin-left: -65px;
+      border-top: 5px solid yellow;
+      border-left: 5px solid rgba(255, 0, 0, 0);
+      border-right: 5px solid rgba(255, 0, 0, 0);
+      border-bottom: 5px solid rgba(255, 0, 0, 0);
+    }
+    .caihong6{
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      position: absolute;
+      top: 50%;
+      margin-top: -60px;
+      left: 50%;
+      margin-left: -60px;
+      border-top: 5px solid orange;
+      border-left: 5px solid rgba(255, 0, 0, 0);
+      border-right: 5px solid rgba(255, 0, 0, 0);
+      border-bottom: 5px solid rgba(255, 0, 0, 0);
+    }
+    .caihong7{
+      width: 110px;
+      height: 110px;
+      border-radius: 55px;
+      position: absolute;
+      top: 50%;
+      margin-top: -55px;
+      left: 50%;
+      margin-left: -55px;
+      border-top: 5px solid rgba(255, 0, 0, 0.8);;
+      border-left: 5px solid rgba(255, 0, 0, 0);
+      border-right: 5px solid rgba(255, 0, 0, 0);
+      border-bottom: 5px solid rgba(255, 0, 0, 0);
+    }
+    ul li:nth-child(5){
+      background: #222233;
+    }
+    .moon{
+      width: 100px;
+      height: 100px;
+      border-radius: 70px;
+      border-left: 20px solid white;
+      background: transparent;
+      position: absolute;
+      top: 50%;
+      margin-top: -55px;
+      left:50px;
+      animation: moon 2s linear infinite alternate-reverse;
+    }
+    @keyframes moon {
+      0%{
+        transform: rotateZ(-10deg);
+      }
+      100%{
+        transform: rotateZ(10deg);
+      }
+    }
+    @keyframes stars {
+      0%{
+        opacity: 0.2;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+    .stars1{
+      width: 4px;
+      height: 4px;
+      border-radius: 2px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      opacity: 0.5;
+      background: white;
+      animation: stars 2s linear infinite alternate-reverse;
+    }
+    .stars2{
+      width: 2px;
+      height: 2px;
+      border-radius: 1px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 80px;
+      left: 30px;
+      background: white;
+    }
+    .stars3{
+      width: 5px;
+      height: 5px;
+      border-radius: 2.5px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 24px;
+      left: 128px;
+      background: white;
+      animation: stars 2s linear infinite alternate-reverse;
+    }
+    .stars4{
+      width: 4px;
+      height: 4px;
+      border-radius: 2px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 90px;
+      left: 139px;
+      background: white;
+    }
+    .stars5{
+      width: 4px;
+      height: 4px;
+      border-radius: 2px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 105px;
+      left: 112px;
+      background: white;
+      animation: stars 2s linear infinite alternate-reverse;
+    }
+    .stars6{
+      width: 5px;
+      height: 5px;
+      border-radius: 2.5px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 165px;
+      left: 90px;
+      background: white;
+      animation: stars 2s linear infinite alternate-reverse;
+    }
+    .stars7{
+      width: 3px;
+      height: 3px;
+      border-radius: 1.5px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 89px;
+      left: 78px;
+      background: white;
+      animation: stars 2s linear infinite alternate-reverse;
+    }
+    .stars8{
+      width: 2px;
+      height: 2px;
+      border-radius: 1px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 67px;
+      left: 101px;
+      background: white;
+      animation: stars 2s linear infinite alternate-reverse;
+    }
+    .stars9{
+      width: 5px;
+      height: 5px;
+      border-radius: 2.5px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 138px;
+      left: 20px;
+      background: white;
+      animation: stars 2s linear infinite alternate-reverse;
+    }
+    .stars10{
+      width: 5px;
+      height: 5px;
+      border-radius: 2.5px;
+      box-shadow:  0 0 10px white;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      background: white;
+    }
+    ul li:nth-child(6){
+      background: #444;
+    }
+    .cloud-6{
+      width: 110px;
+      height: 90px;
+      position: absolute;
+      left: 50%;
+      margin-left: -55px;
+      top: 30px;
+      animation: cloud 3s linear infinite alternate-reverse;
+    }
+    .cloud-6 .cloud1{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #222;
+      position: absolute;
+      left: 8px;
+      top: 45px;
+    }
+    .cloud-6 .cloud2{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #222;
+      position: absolute;
+      left: 25px;
+      top: 22px;
+    }
+    .cloud-6 .cloud3{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #222;
+      position: absolute;
+      left: 30px;
+      top: 48px;
+    }
+    .cloud-6 .cloud4{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #222;
+      position: absolute;
+      top: 32px;
+      right: 24px;
+    }
+    .cloud-6 .cloud5{
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background: #222;
+      position: absolute;
+      top: 45px;
+      right: 10px;
+    }
+    .cloud-6 .cloud6{
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background: #222;
+      position: absolute;
+      top: 63px;
+      right: 32px;
+    }
+    .lei{
+      width: 0;
+      height: 0;
+      border-right: 7px solid transparent;
+      border-top: 40px solid yellow;
+      box-shadow: yellow -7px -30px 2px;
+      transform-origin: 0 -40px;
+      position: absolute;
+      top: 80px;
+      left: 55px;
+      opacity: 0;
+      animation: lei 2s linear infinite 1s;
+    }
+    @keyframes lei{
+      0%{
+        opacity: 0
+      }
+      4%{
+        opacity: 0;
+      }
+      5%{
+        transform: rotateZ(45deg);
+        opacity: 1;
+      }
+      6%{
+        opacity: 0;
+      }
+      49%{
+        opacity: 0;
+      }
+      50%{
+        transform: rotateZ(0);
+        opacity: 1;
+      }
+      51%{
+        opacity: 0;
+      }
+      95%{
+        opacity: 0;
+      }
+      96%{
+        transform: rotateZ(-30deg);
+        opacity: 1;
+      }
+      97%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 0;
+      }
+    }
+    ul li:nth-child(7){
+      background: #85db8c;
+    }
+    .cloud-7{
+      width: 110px;
+      height: 90px;
+      position: absolute;
+      left: 50%;
+      margin-left: -55px;
+      top: 30px;
+      animation: cloud 3s linear infinite alternate-reverse;
+    }
+    .cloud-7 .cloud1{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #fff;
+      position: absolute;
+      left: 8px;
+      top: 45px;
+    }
+    .cloud-7 .cloud2{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #fff;
+      position: absolute;
+      left: 25px;
+      top: 22px;
+    }
+    .cloud-7 .cloud3{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #fff;
+      position: absolute;
+      left: 30px;
+      top: 48px;
+    }
+    .cloud-7 .cloud4{
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background: #fff;
+      position: absolute;
+      top: 32px;
+      right: 24px;
+    }
+    .cloud-7 .cloud5{
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background: #fff;
+      position: absolute;
+      top: 45px;
+      right: 10px;
+    }
+    .cloud-7 .cloud6{
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background: #fff;
+      position: absolute;
+      top: 63px;
+      right: 32px;
+    }
+     ul li:nth-child(7) div[class^="rain"]{
+      width: 5px;
+      height: 5px;
+      background: #d9eada;
+      border-radius: 2.5px;
+      position: absolute;
+      top: 90px;
+     }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <ul>
+      <li>
+        <div class="sun"></div>
+        <div class="first"></div>
+        <div class="second"></div>
+      </li>
+      <li>
+        <div class="cloud-1">
+          <div class="cloud1"></div>
+          <div class="cloud2"></div>
+          <div class="cloud3"></div>
+          <div class="cloud4"></div>
+          <div class="cloud5"></div>
+          <div class="cloud6"></div>
+        </div>
+        <div class="ying"></div>
+      </li>
+      <li>
+        <div class="cloud-2">
+          <div class="cloud1"></div>
+          <div class="cloud2"></div>
+          <div class="cloud3"></div>
+          <div class="cloud4"></div>
+          <div class="cloud5"></div>
+          <div class="cloud6"></div>
+        </div>
+        <div class="rain1"></div>
+        <div class="rain2"></div>
+        <div class="rain3"></div>
+        <div class="rain4"></div>
+        <div class="rain5"></div>
+        <div class="rain6"></div>
+        <div class="rain7"></div>
+        <div class="rain8"></div>
+        <div class="rain9"></div>
+        <div class="rain10"></div>
+        <div class="ying"></div>
+      </li>
+      <li>
+        <div class="caihong">
+          <div class="caihong1"></div>
+          <div class="caihong2"></div>
+          <div class="caihong3"></div>
+          <div class="caihong4"></div>
+          <div class="caihong5"></div>
+          <div class="caihong6"></div>
+          <div class="caihong7"></div>
+        </div>
+        <div class="ying"></div>
+      </li>
+      <li>
+        <div class="moon"></div>
+        <div class="stars1"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+        <div class="stars4"></div>
+        <div class="stars5"></div>
+        <div class="stars6"></div>
+        <div class="stars7"></div>
+        <div class="stars8"></div>
+        <div class="stars9"></div>
+        <div class="stars10"></div>
+      </li>
+      <li>
+        <div class="cloud-6">
+          <div class="cloud1"></div>
+          <div class="cloud2"></div>
+          <div class="cloud3"></div>
+          <div class="cloud4"></div>
+          <div class="cloud5"></div>
+          <div class="cloud6"></div>
+          <div class="lei"></div>
+        </div>
+        <div class="ying"></div>
+      </li>
+      <li>
+        <div class="cloud-7">
+          <div class="cloud1"></div>
+          <div class="cloud2"></div>
+          <div class="cloud3"></div>
+          <div class="cloud4"></div>
+          <div class="cloud5"></div>
+          <div class="cloud6"></div>
+        </div>
+        <div class="rain1"></div>
+        <div class="rain2"></div>
+        <div class="rain3"></div>
+        <div class="rain4"></div>
+        <div class="rain5"></div>
+        <div class="rain6"></div>
+        <div class="rain7"></div>
+        <div class="rain8"></div>
+        <div class="rain9"></div>
+        <div class="rain10"></div>
+        <div class="ying"></div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

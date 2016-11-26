@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>清除浮动第一种方式</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .f{
+      width: 1000px;
+      height: 300px;/*给父盒子直接设置高度*/
+      background-color: blue;
+      margin: 0 auto;
+    }
+    .f div{
+      width: 300px;
+      height: 100px;
+      float: left;
+    }
+    .s1{
+      background-color: red;
+    }
+    .s2{
+      background-color: yellow;
+    }
+    .s3{
+      background-color: pink;
+    }
+    .f1{
+      width: 1000px;
+      height: 500px;
+      background: green;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- 如果一个父盒子div没有设置高，这个div中的所有的元素都浮动了，那么这个div的高是0 -->
+  <div class="f">
+    <div class="s1"></div>
+    <div class="s2"></div>
+    <div class="s3"></div>
+
+  </div>
+  <div class="f1">
+
+  </div>
+</body>
+</html>

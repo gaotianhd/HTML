@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .div1{
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    float: left;
+    }
+    .div2{
+      width: 100px;
+      height: 100px;
+      background: red;
+      float: left;
+    }
+    .div3{
+      width: 200px;
+      height: 200px;
+      background: green;
+    }
+    .div4{
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      background: blue;
+    }
+    .div5{
+      width: 100px;
+      height: 100px;
+      float: left;
+      background: yellow;
+      position: absolute;
+    }
+    .btn{
+      border: none;
+      text-decoration: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div style="overflow:hidden">
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </div>
+  <div class="div3"></div>
+  <div class="div4"><div class="div5"></div></div>
+  <i>qwe</i>
+  <em>qwe</em>
+
+无label标签:<input id="ye" type="checkbox" /> 普通文本 <br>
+
+有label标签:<label for="ye1"><input id="ye1" type="checkbox" />我是标签文本</label>
+<button class="btn">点击</button>
+<script type="text/javascript">
+  var a = 12,
+      b = 'str',
+      c = false,
+      d = [1,'d',function(){return 5;}],
+      e = {'name':'e'},
+      f = function(){return 'function';};
+
+  console.log("a:",a.constructor);
+  console.log("b:",b.constructor);
+  console.log("c:",c.constructor);
+  console.log("d:",d.constructor);
+  console.log("e:",e.constructor);
+  console.log("f:",f.constructor);
+</script>
+</body>
+</html>

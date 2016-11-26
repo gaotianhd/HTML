@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>overflow</title>
+  <style media="screen">
+    .f{
+      width: 100px;
+      height: 100px;
+      background: red;
+      /*超出的部分隐藏*/
+      /*overflow: hidden;*/
+      /*加入滚动条 不管超没超出*/
+      /*overflow: scroll;*/
+      /*超出的加滚动条 自动添加*/
+      overflow: auto;
+    }
+    .s{
+      width: 50px;
+      height: 200px;
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="f">
+    <div class="s">
+    </div>
+  </div>
+  <p>水电费借口是个卡萨丁卡</p>
+  <p>水电费借口是个卡萨丁卡</p>
+  <p>水电费借口是个卡萨丁卡</p>
+</body>
+</html>

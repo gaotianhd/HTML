@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .f{
+      width: 270px;
+      height: 129px;
+      background: url("./day12/image/baidu.png") no-repeat;
+      animation-name: run;
+      animation-duration: 5s;
+      animation-timing-function: steps(64);
+      animation-iteration-count: infinite;
+      margin: 50px auto;
+    }
+    @keyframes run {
+    0%{background-position: 0;}
+    100%{background-position: -17280px 0}
+    }
+  </style>
+</head>
+<body>
+  <div id="f1" class="f"></div>
+</body>
+</html>

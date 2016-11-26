@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3d旋转</title>
+  <style media="screen">
+  body{
+    perspective: 400px;
+  }
+    .f{
+      width: 200px;
+      height: 200px;
+      background: yellow;
+      transition: all 1s linear;
+      transform-origin: left bottom;
+      margin: 50px auto;
+      /*perspective: 500px;*/
+    }
+    .f:hover{
+      transform: rotateX(360deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="f"></div>
+</body>
+</html>

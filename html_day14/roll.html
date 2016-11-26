@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>滚动</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .f {
+      width: 882px;
+      height: 86px;
+      margin: 200px auto;
+      /*border: 1px solid red;*/
+      overflow: hidden;
+      position: relative;
+    }
+    .nav{
+      width: 1764px;
+      height: 86px;
+      animation-name: roll;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      /*animation-timing-function: steps(14);*/
+      position: absolute;
+    }
+    .nav img{
+      float: left;
+    }
+    @keyframes roll{
+      0%{
+        left: 0;
+      }
+      100%{
+        left: -882px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="f">
+    <div class="nav">
+    <img src="./day14/image/1.jpg" alt="" />
+    <img src="./day14/image/2.jpg" alt="" />
+    <img src="./day14/image/3.jpg" alt="" />
+    <img src="./day14/image/4.jpg" alt="" />
+    <img src="./day14/image/5.jpg" alt="" />
+    <img src="./day14/image/6.jpg" alt="" />
+    <img src="./day14/image/7.jpg" alt="" />
+    <img src="./day14/image/1.jpg" alt="" />
+    <img src="./day14/image/2.jpg" alt="" />
+    <img src="./day14/image/3.jpg" alt="" />
+    <img src="./day14/image/4.jpg" alt="" />
+    <img src="./day14/image/5.jpg" alt="" />
+    <img src="./day14/image/6.jpg" alt="" />
+    <img src="./day14/image/7.jpg" alt="" />
+  </div>
+</div>
+</body>
+</html>

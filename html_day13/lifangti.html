@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>立方体</title>
+  <style media="screen">
+    .f{
+      width: 150px;
+      height: 150px;
+      margin: 100px auto;
+      transform-style: preserve-3d;
+      /*perspective: 400px;*/
+      position: relative;
+      transition: all 1s linear;
+      transform: rotateX(-20deg) rotateY(-60deg);
+      animation-name: run ;
+      animation-duration: 2s;
+      animation-timing-function: steps(100);
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    .f div{
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: center;
+      line-height: 150px;
+      font-size: 30px;
+      opacity: 0.5;
+    }
+    .font{
+      background: pink;
+      transform: translateZ(150px);
+      /*transform-origin: left top;*/
+    }
+    .back{
+      background: yellow;
+      /*transform:  rotateY(-45deg);*/
+      /*transform-origin: left top;*/
+    }
+    .left{
+      background: blue;
+      /*transform-origin: left;*/
+      transform: rotateY(-90deg) translateX(75px) translateZ(75px);
+    }
+    .right{
+      background: green;
+      transform-origin: right;
+      transform: rotateY(90deg);
+    }
+    .top{
+      background: gray;
+      transform-origin: top;
+      transform: rotateX(90deg);
+    }
+    .bottom{
+      background: purple;
+      transform-origin: bottom;
+      transform: rotateX(-90deg);
+    }
+    .f:hover{
+      transform: rotateX(340deg) rotateY(300deg);
+    }
+    /*@keyframes run{
+      0%{
+        transition: all 2s linear;
+        background: #d71345;
+        transform: rotate3d(-5,0,0,0deg);
+      }
+      10%{
+        transition: all 2s linear;
+        background: #deab8a;
+        transform: rotate3d(0,5,0,90deg);
+      }
+      20%{
+        transition: all 2s linear;
+        background: #817936;
+        transform: rotate3d(0,0,5,180deg);
+      }
+      30%{
+        transition: all 2s linear;
+        background: #444693;
+        transform: rotate3d(0,5,0,270deg);
+      }
+      40%{
+        transition: all 2s linear;
+        background: #ef5b9c;
+        transform: rotate3d(5,0,0,360deg);
+      }
+      50%{
+        transition: all 2s linear;
+        background: #f47920;
+        transform: rotate3d(0,5,0,450deg);
+      }
+      60%{
+        transition: all 2s linear;
+        background: #80752c;
+        transform: rotate3d(0,0,5,540deg);
+      }
+      70%{
+        transition: all 2s linear;
+        background: #2a5caa;
+        transform: rotate3d(0,5,0,630deg);
+      }
+      80%{
+        transition: all 2s linear;
+        background: #f8aba6;
+        transform: rotate3d(5,0,0,720deg);
+      }
+      90%{
+        transition: all 2s linear;
+        background: green;
+        transform: rotate3d(0,5,0,810deg);
+      }
+      100%{
+        transition: all 2s linear;
+        background: gray;
+        transform: rotate3d(0,0,5,900deg);
+      }
+
+    }*/
+  </style>
+</head>
+<body>
+  <div class="f">
+    <div class="font">font</div>
+    <div class="back">back</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+    <div class="top">top</div>
+    <div class="bottom">bottom</div>
+  </div>
+</body>
+</html>

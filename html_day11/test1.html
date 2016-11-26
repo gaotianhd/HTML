@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css3盒子模型</title>
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+    .f{
+      width: 200px;
+      height: 200px;
+      background: red;
+      padding-left: 50px;
+      box-sizing: content-box;/* 盒子属性的默认值*/
+      margin-bottom: 30px;
+    }
+    .f1{
+      width: 200px;
+      height: 200px;
+      background: red;
+      box-sizing: border-box;/*盒子大小不受padding影响，盒子大小不再变化*/
+      padding-left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="f">说客户给肯定是结果好</div>
+  <div class="f1">说客户给肯定是结果好</div>
+</body>
+</html>

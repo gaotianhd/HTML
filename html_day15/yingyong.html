@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+    }
+    .box {
+      width: 680px;
+      height: 185px;
+      margin: 50px auto;
+      border: 1px solid #eee;
+      box-shadow: 0 0 50px #eee;
+    }
+    section h3{
+      text-align: center;
+      background: #eee;
+    }
+    .box ul{
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-around;
+    }
+    .box1{
+      width: 680px;
+      margin: 0 auto;
+      border: 1px solid #eee;
+      box-shadow: 0 0 50px #eee;
+    }
+    .box1 ul{
+      width: 360px;
+      height: 500px;
+      margin-left: 10px;
+      display: flex;
+      flex-flow: column wrap;
+    }
+    .box1 ul li:nth-child(1){
+      width: 330px;
+      margin-top: 10px;
+      background: green;
+      flex: 1;
+    }
+    .box1 ul li:nth-child(2){
+      width: 330px;
+      flex: 8;
+      display: flex;
+    }
+    .box1 ul li:nth-child(3){
+      width: 330px;
+      margin-bottom: 10px;
+      background: pink;
+      flex: 1;
+    }
+    .box1 ul li:nth-child(2) span:nth-child(1){
+      flex: 1;
+      background: red;
+    }
+    .box1 ul li:nth-child(2) span:nth-child(2){
+      flex: 2;
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <section class="box">
+    <h3>导航</h3>
+    <ul>
+      <li>首页</li>
+      <li>新闻</li>
+      <li>服务</li>
+      <li>联系我们</li>
+      <li>联系我们</li>
+      <li>联系我们</li>
+      <li>联系我们</li>
+      <li>联系我们</li>
+    </ul>
+  </section>
+  <section class="box1">
+    <h3>伸缩布局</h3>
+    <ul>
+      <li>头部</li>
+      <li><span>侧栏</span><span>内容</span></li>
+      <li>底部</li>
+    </ul>
+  </section>
+</body>
+</html>
